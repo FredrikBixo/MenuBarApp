@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.Cocoa.XIB" version="3.0" toolsVersion="13771" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES" customObjectInstantitationMethod="direct">
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="13771"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <customObject id="-2" userLabel="File's Owner"/>
+        <customObject id="-1" userLabel="First Responder" customClass="FirstResponder"/>
+        <customObject id="-3" userLabel="Application" customClass="NSObject"/>
+        <viewController id="Sjx-jA-ZW9" customClass="CustomVC3" customModuleProvider="target"/>
+        <view id="QZC-7T-dGZ">
+            <rect key="frame" x="0.0" y="0.0" width="412" height="637"/>
+            <autoresizingMask key="autoresizingMask"/>
+            <subviews>
+                <searchField hidden="YES" wantsLayer="YES" focusRingType="none" verticalHuggingPriority="750" fixedFrame="YES" textCompletion="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WPm-ME-EsT">
+                    <rect key="frame" x="0.0" y="-97" width="226" height="22"/>
+                    <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
+                    <searchFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" borderStyle="bezel" focusRingType="none" alignment="left" placeholderString="" usesSingleLineMode="YES" bezelStyle="round" id="Fja-aQ-s0V">
+                        <font key="font" metaFont="smallSystem"/>
+                        <color key="textColor" name="textColor" catalog="System" colorSpace="catalog"/>
+                        <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
+                    </searchFieldCell>
+                </searchField>
+                <textField hidden="YES" verticalHuggingPriority="750" horizontalCompressionResistancePriority="250" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="DPh-fc-jyr">
+                    <rect key="frame" x="17" y="20" width="378" height="0.0"/>
+                    <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                    <textFieldCell key="cell" sendsActionOnEndEditing="YES" alignment="center" id="gv3-gc-ou9">
+                        <font key="font" metaFont="smallSystem"/>
+                        <color key="textColor" name="disabledControlTextColor" catalog="System" colorSpace="catalog"/>
+                        <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                    </textFieldCell>
+                </textField>
+                <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="xLy-Q9-2E4">
+                    <rect key="frame" x="18" y="587" width="30" height="30"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="30" id="fzC-Hz-mQD"/>
+                        <constraint firstAttribute="width" constant="30" id="ikl-eF-Kn3"/>
+                    </constraints>
+                    <buttonCell key="cell" type="bevel" title="Back" bezelStyle="rounded" imagePosition="overlaps" alignment="center" imageScaling="proportionallyDown" inset="2" id="kUM-XD-ocb">
+                        <behavior key="behavior" lightByContents="YES"/>
+                        <font key="font" metaFont="system"/>
+                    </buttonCell>
+                </button>
+                <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="XX7-q8-sav">
+                    <rect key="frame" x="146" y="458" width="120" height="17"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="17" id="nMh-XY-ZhS"/>
+                    </constraints>
+                    <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" alignment="center" title="0x4141414324321" id="cTC-Hx-p24">
+                        <font key="font" metaFont="system"/>
+                        <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                        <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                    </textFieldCell>
+                </textField>
+                <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="fVj-sw-LyO">
+                    <rect key="frame" x="146" y="421" width="120" height="17"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="17" id="03D-vx-j7l"/>
+                    </constraints>
+                    <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" alignment="center" title="HODLStudios.ETH" id="AOJ-Or-HBj">
+                        <font key="font" metaFont="system"/>
+                        <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                        <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                    </textFieldCell>
+                </textField>
+            </subviews>
+            <constraints>
+                <constraint firstItem="xLy-Q9-2E4" firstAttribute="leading" secondItem="QZC-7T-dGZ" secondAttribute="leading" constant="18" id="GGc-DD-8GI"/>
+                <constraint firstItem="XX7-q8-sav" firstAttribute="centerX" secondItem="QZC-7T-dGZ" secondAttribute="centerX" id="SA9-HN-7fz"/>
+                <constraint firstItem="fVj-sw-LyO" firstAttribute="top" secondItem="XX7-q8-sav" secondAttribute="bottom" constant="20" id="h7w-99-nvl"/>
+                <constraint firstItem="xLy-Q9-2E4" firstAttribute="top" secondItem="QZC-7T-dGZ" secondAttribute="top" constant="20" id="hfR-1O-JrS"/>
+                <constraint firstItem="XX7-q8-sav" firstAttribute="top" secondItem="QZC-7T-dGZ" secondAttribute="top" constant="162" id="nfj-a5-Tc5"/>
+                <constraint firstItem="fVj-sw-LyO" firstAttribute="centerX" secondItem="QZC-7T-dGZ" secondAttribute="centerX" id="pCQ-eK-3oP"/>
+            </constraints>
+            <point key="canvasLocation" x="175" y="935.5"/>
+        </view>
+    </objects>
+</document>

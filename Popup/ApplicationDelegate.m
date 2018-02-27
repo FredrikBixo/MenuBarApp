@@ -31,6 +31,7 @@ void *kContextActivePanel = &kContextActivePanel;
 - (void)applicationDidFinishLaunching:(NSNotification *)notification
 {
     // Install icon into the menu bar
+    
     self.menubarController = [[MenubarController alloc] init];
 }
 

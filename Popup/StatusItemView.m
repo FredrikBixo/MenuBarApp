@@ -99,4 +99,5 @@
     NSRect frame = [self frame];
     return [self.window convertRectToScreen:frame];
 }
+
 @end

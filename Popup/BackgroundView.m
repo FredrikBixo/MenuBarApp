@@ -4,7 +4,7 @@
 #define STROKE_OPACITY 1.0f
 
 #define LINE_THICKNESS 1.0f
-#define CORNER_RADIUS 6.0f
+#define CORNER_RADIUS 16.0f
 
 #define SEARCH_INSET 10.0f
 
@@ -49,7 +49,7 @@
     [path lineToPoint:NSMakePoint(_arrowX - ARROW_WIDTH / 2, NSMaxY(contentRect) - ARROW_HEIGHT)];
     [path closePath];
     
-    [[NSColor colorWithRed:60/255.f green:70/255.f blue:88/255.f alpha:1] setFill];
+    [[NSColor colorWithRed:27/255.f green:33/255.f blue:41/255.f alpha:1] setFill];
     [path fill];
     
     [NSGraphicsContext saveGraphicsState];

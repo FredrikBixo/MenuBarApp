@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		D37AC529F619CB41744B73DC /* Pods_Popup.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A49D91B95E0E41D82A24C02D /* Pods_Popup.framework */; };
 		DD4F7C0913C30F9F00825C6E /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DD4F7C0813C30F9F00825C6E /* Cocoa.framework */; };
 		DD4F7C1513C30F9F00825C6E /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = DD4F7C1413C30F9F00825C6E /* main.m */; };
 		DD4F7C1C13C30F9F00825C6E /* ApplicationDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = DD4F7C1B13C30F9F00825C6E /* ApplicationDelegate.m */; };
@@ -21,9 +22,25 @@
 		DD4F7C4C13C322FA00825C6E /* StatusHighlighted.png in Resources */ = {isa = PBXBuildFile; fileRef = DD4F7C4A13C322FA00825C6E /* StatusHighlighted.png */; };
 		DDF4EFAC16C80A510044D141 /* Status@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = DDF4EFAB16C80A510044D141 /* Status@2x.png */; };
 		DDF4EFAE16C80AD30044D141 /* StatusHighlighted@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = DDF4EFAD16C80AD30044D141 /* StatusHighlighted@2x.png */; };
+		EF185163203B719E007B7208 /* SearchCell.m in Sources */ = {isa = PBXBuildFile; fileRef = EF185161203B719D007B7208 /* SearchCell.m */; };
+		EF1DCE0B201907E200E84F1F /* CurrencyCell.m in Sources */ = {isa = PBXBuildFile; fileRef = EF1DCE09201907E200E84F1F /* CurrencyCell.m */; };
+		EF1DCE0E201907F900E84F1F /* HoldingCell.m in Sources */ = {isa = PBXBuildFile; fileRef = EF1DCE0D201907F900E84F1F /* HoldingCell.m */; };
+		EF1DCE112019090E00E84F1F /* PriceCell.m in Sources */ = {isa = PBXBuildFile; fileRef = EF1DCE102019090E00E84F1F /* PriceCell.m */; };
+		EF225638203C2FE700C2F9E4 /* AccountsCell.m in Sources */ = {isa = PBXBuildFile; fileRef = EF225637203C2FE700C2F9E4 /* AccountsCell.m */; };
+		EF234E892020E14E0043C767 /* CustomSearchField.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF234E882020E14E0043C767 /* CustomSearchField.swift */; };
+		EF234E8F202107370043C767 /* CustomVew2.m in Sources */ = {isa = PBXBuildFile; fileRef = EF234E8E202107370043C767 /* CustomVew2.m */; };
+		EF301F9A20156821001841FB /* MyHeaderCell.m in Sources */ = {isa = PBXBuildFile; fileRef = EF301F9920156821001841FB /* MyHeaderCell.m */; };
+		EF301FA1201570BD001841FB /* ForecastHeaderView.m in Sources */ = {isa = PBXBuildFile; fileRef = EF301FA0201570BD001841FB /* ForecastHeaderView.m */; };
+		EF77FD1820167A2B009C1B78 /* Media.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EF77FD1720167A2B009C1B78 /* Media.xcassets */; };
+		EFE1205920194BD600878450 /* CustomVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFE1205820194BD600878450 /* CustomVC.swift */; };
+		EFE1205E20194D2900878450 /* CustomVC2.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFE1205D20194D2900878450 /* CustomVC2.swift */; };
+		EFE1206120194DC200878450 /* CustomVC3.m in Sources */ = {isa = PBXBuildFile; fileRef = EFE1206020194DC200878450 /* CustomVC3.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		558D8CB909824D8C851C6CBE /* Pods-Popup.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Popup.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Popup/Pods-Popup.debug.xcconfig"; sourceTree = "<group>"; };
+		57891AD3513D9599254C6D99 /* Pods-Popup.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Popup.release.xcconfig"; path = "Pods/Target Support Files/Pods-Popup/Pods-Popup.release.xcconfig"; sourceTree = "<group>"; };
+		A49D91B95E0E41D82A24C02D /* Pods_Popup.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Popup.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		DD4F7C0413C30F9F00825C6E /* Popup.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Popup.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		DD4F7C0813C30F9F00825C6E /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = System/Library/Frameworks/Cocoa.framework; sourceTree = SDKROOT; };
 		DD4F7C0B13C30F9F00825C6E /* AppKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppKit.framework; path = System/Library/Frameworks/AppKit.framework; sourceTree = SDKROOT; };
@@ -50,6 +67,30 @@
 		DD4F7C4A13C322FA00825C6E /* StatusHighlighted.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = StatusHighlighted.png; path = Popup/StatusHighlighted.png; sourceTree = "<group>"; };
 		DDF4EFAB16C80A510044D141 /* Status@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Status@2x.png"; path = "Popup/Status@2x.png"; sourceTree = "<group>"; };
 		DDF4EFAD16C80AD30044D141 /* StatusHighlighted@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "StatusHighlighted@2x.png"; path = "Popup/StatusHighlighted@2x.png"; sourceTree = "<group>"; };
+		EF185161203B719D007B7208 /* SearchCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SearchCell.m; path = Popup/SearchCell.m; sourceTree = "<group>"; };
+		EF185162203B719E007B7208 /* SearchCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SearchCell.h; path = Popup/SearchCell.h; sourceTree = "<group>"; };
+		EF1DCE09201907E200E84F1F /* CurrencyCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CurrencyCell.m; path = Popup/CurrencyCell.m; sourceTree = "<group>"; };
+		EF1DCE0A201907E200E84F1F /* CurrencyCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CurrencyCell.h; path = Popup/CurrencyCell.h; sourceTree = "<group>"; };
+		EF1DCE0C201907F900E84F1F /* HoldingCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = HoldingCell.h; path = Popup/HoldingCell.h; sourceTree = "<group>"; };
+		EF1DCE0D201907F900E84F1F /* HoldingCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = HoldingCell.m; path = Popup/HoldingCell.m; sourceTree = "<group>"; };
+		EF1DCE0F2019090E00E84F1F /* PriceCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = PriceCell.h; path = Popup/PriceCell.h; sourceTree = "<group>"; };
+		EF1DCE102019090E00E84F1F /* PriceCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = PriceCell.m; path = Popup/PriceCell.m; sourceTree = "<group>"; };
+		EF225636203C2FE700C2F9E4 /* AccountsCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AccountsCell.h; sourceTree = "<group>"; };
+		EF225637203C2FE700C2F9E4 /* AccountsCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AccountsCell.m; sourceTree = "<group>"; };
+		EF234E882020E14E0043C767 /* CustomSearchField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomSearchField.swift; sourceTree = "<group>"; };
+		EF234E8D202107370043C767 /* CustomVew2.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CustomVew2.h; sourceTree = "<group>"; };
+		EF234E8E202107370043C767 /* CustomVew2.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CustomVew2.m; sourceTree = "<group>"; };
+		EF301F9020155F35001841FB /* Popup-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Popup-Bridging-Header.h"; sourceTree = "<group>"; };
+		EF301F9920156821001841FB /* MyHeaderCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MyHeaderCell.m; sourceTree = "<group>"; };
+		EF301F9B20156989001841FB /* MyHeaderCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MyHeaderCell.h; sourceTree = "<group>"; };
+		EF301F9F201570BD001841FB /* ForecastHeaderView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = ForecastHeaderView.h; path = "/Users/fredrikbixo/Downloads/Popup-master/Popup/ForecastHeaderView.h"; sourceTree = "<absolute>"; };
+		EF301FA0201570BD001841FB /* ForecastHeaderView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = ForecastHeaderView.m; path = "/Users/fredrikbixo/Downloads/Popup-master/Popup/ForecastHeaderView.m"; sourceTree = "<absolute>"; };
+		EF77FD1720167A2B009C1B78 /* Media.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Media.xcassets; sourceTree = "<group>"; };
+		EFE1205820194BD600878450 /* CustomVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomVC.swift; sourceTree = "<group>"; };
+		EFE1205C20194D0200878450 /* CustomVC3.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = CustomVC3.xib; path = "/Users/fredrikbixo/Downloads/Popup-master/CustomVC3.xib"; sourceTree = "<absolute>"; };
+		EFE1205D20194D2900878450 /* CustomVC2.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomVC2.swift; sourceTree = "<group>"; };
+		EFE1205F20194DC200878450 /* CustomVC3.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CustomVC3.h; sourceTree = "<group>"; };
+		EFE1206020194DC200878450 /* CustomVC3.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CustomVC3.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -58,12 +99,22 @@
 			buildActionMask = 2147483647;
 			files = (
 				DD4F7C0913C30F9F00825C6E /* Cocoa.framework in Frameworks */,
+				D37AC529F619CB41744B73DC /* Pods_Popup.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		5C2A4FA62426AB6DA63A7D3A /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				558D8CB909824D8C851C6CBE /* Pods-Popup.debug.xcconfig */,
+				57891AD3513D9599254C6D99 /* Pods-Popup.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 		DD4F7BF913C30F9F00825C6E = {
 			isa = PBXGroup;
 			children = (
@@ -72,6 +123,7 @@
 				DD4F7C0713C30F9F00825C6E /* Frameworks */,
 				DD4F7C0513C30F9F00825C6E /* Products */,
 				DD4F7C1013C30F9F00825C6E /* Popup-Info.plist */,
+				5C2A4FA62426AB6DA63A7D3A /* Pods */,
 			);
 			sourceTree = "<group>";
 		};
@@ -90,6 +142,7 @@
 				DD4F7C0C13C30F9F00825C6E /* CoreData.framework */,
 				DD4F7C0D13C30F9F00825C6E /* Foundation.framework */,
 				DD4F7C0813C30F9F00825C6E /* Cocoa.framework */,
+				A49D91B95E0E41D82A24C02D /* Pods_Popup.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -97,6 +150,7 @@
 		DD4F7C0E13C30F9F00825C6E /* Sources */ = {
 			isa = PBXGroup;
 			children = (
+				EF1DCE08201907D800E84F1F /* Cells */,
 				DD4F7C2613C311DF00825C6E /* Controllers */,
 				DD4F7C3913C317EC00825C6E /* Views */,
 				DD4F7C0F13C30F9F00825C6E /* Supporting Files */,
@@ -121,8 +175,13 @@
 				DD4F7C1B13C30F9F00825C6E /* ApplicationDelegate.m */,
 				DD4F7C3613C317A500825C6E /* MenubarController.h */,
 				DD4F7C3713C317A500825C6E /* MenubarController.m */,
+				EF301F9F201570BD001841FB /* ForecastHeaderView.h */,
+				EF301FA0201570BD001841FB /* ForecastHeaderView.m */,
+				EF301F9920156821001841FB /* MyHeaderCell.m */,
+				EF301F9B20156989001841FB /* MyHeaderCell.h */,
 				DD4F7C3D13C318D600825C6E /* PanelController.h */,
 				DD4F7C3E13C318D600825C6E /* PanelController.m */,
+				EF301F9020155F35001841FB /* Popup-Bridging-Header.h */,
 			);
 			name = Controllers;
 			sourceTree = "<group>";
@@ -139,8 +198,25 @@
 		DD4F7C2913C3124300825C6E /* XIBs */ = {
 			isa = PBXGroup;
 			children = (
+				EF185162203B719E007B7208 /* SearchCell.h */,
+				EF185161203B719D007B7208 /* SearchCell.m */,
+				EF234E8D202107370043C767 /* CustomVew2.h */,
+				EF234E8E202107370043C767 /* CustomVew2.m */,
+				EF1DCE0C201907F900E84F1F /* HoldingCell.h */,
+				EF1DCE0D201907F900E84F1F /* HoldingCell.m */,
+				EF1DCE0F2019090E00E84F1F /* PriceCell.h */,
+				EF1DCE102019090E00E84F1F /* PriceCell.m */,
+				EF1DCE0A201907E200E84F1F /* CurrencyCell.h */,
+				EF1DCE09201907E200E84F1F /* CurrencyCell.m */,
+				EFE1205C20194D0200878450 /* CustomVC3.xib */,
 				DD4F7C1D13C30F9F00825C6E /* MainMenu.xib */,
 				DD4F7C4013C31B4A00825C6E /* Panel.xib */,
+				EF225636203C2FE700C2F9E4 /* AccountsCell.h */,
+				EF225637203C2FE700C2F9E4 /* AccountsCell.m */,
+				EFE1205D20194D2900878450 /* CustomVC2.swift */,
+				EFE1205F20194DC200878450 /* CustomVC3.h */,
+				EFE1206020194DC200878450 /* CustomVC3.m */,
+				EFE1205820194BD600878450 /* CustomVC.swift */,
 			);
 			name = XIBs;
 			sourceTree = "<group>";
@@ -161,12 +237,21 @@
 		DD4F7C4813C322D800825C6E /* Graphics */ = {
 			isa = PBXGroup;
 			children = (
+				EF77FD1720167A2B009C1B78 /* Media.xcassets */,
+				EF234E882020E14E0043C767 /* CustomSearchField.swift */,
 				DD4F7C4913C322FA00825C6E /* Status.png */,
 				DDF4EFAB16C80A510044D141 /* Status@2x.png */,
 				DD4F7C4A13C322FA00825C6E /* StatusHighlighted.png */,
 				DDF4EFAD16C80AD30044D141 /* StatusHighlighted@2x.png */,
 			);
 			name = Graphics;
+			sourceTree = "<group>";
+		};
+		EF1DCE08201907D800E84F1F /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Cells;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -176,9 +261,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = DD4F7C2213C30F9F00825C6E /* Build configuration list for PBXNativeTarget "Popup" */;
 			buildPhases = (
+				8AFFB14CD2B6636B6F535072 /* [CP] Check Pods Manifest.lock */,
 				DD4F7C0013C30F9F00825C6E /* Sources */,
 				DD4F7C0113C30F9F00825C6E /* Frameworks */,
 				DD4F7C0213C30F9F00825C6E /* Resources */,
+				828EF47A8462EF466FDF55C1 /* [CP] Embed Pods Frameworks */,
+				E7AA1C83B1FBBA373931011E /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -196,6 +284,11 @@
 			isa = PBXProject;
 			attributes = {
 				LastUpgradeCheck = 0910;
+				TargetAttributes = {
+					DD4F7C0313C30F9F00825C6E = {
+						LastSwiftMigration = 0920;
+					};
+				};
 			};
 			buildConfigurationList = DD4F7BFE13C30F9F00825C6E /* Build configuration list for PBXProject "Popup" */;
 			compatibilityVersion = "Xcode 3.2";
@@ -221,6 +314,7 @@
 			files = (
 				DD4F7C1F13C30F9F00825C6E /* MainMenu.xib in Resources */,
 				DD4F7C4113C31B4A00825C6E /* Panel.xib in Resources */,
+				EF77FD1820167A2B009C1B78 /* Media.xcassets in Resources */,
 				DD4F7C4B13C322FA00825C6E /* Status.png in Resources */,
 				DD4F7C4C13C322FA00825C6E /* StatusHighlighted.png in Resources */,
 				DDF4EFAC16C80A510044D141 /* Status@2x.png in Resources */,
@@ -230,18 +324,84 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		828EF47A8462EF466FDF55C1 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-Popup/Pods-Popup-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/FlatButton/FlatButton.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FlatButton.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Popup/Pods-Popup-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		8AFFB14CD2B6636B6F535072 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-Popup-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		E7AA1C83B1FBBA373931011E /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Popup/Pods-Popup-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		DD4F7C0013C30F9F00825C6E /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				EF301F9A20156821001841FB /* MyHeaderCell.m in Sources */,
+				EFE1206120194DC200878450 /* CustomVC3.m in Sources */,
+				EF234E8F202107370043C767 /* CustomVew2.m in Sources */,
+				EF185163203B719E007B7208 /* SearchCell.m in Sources */,
+				EFE1205E20194D2900878450 /* CustomVC2.swift in Sources */,
 				DD4F7C1513C30F9F00825C6E /* main.m in Sources */,
+				EF301FA1201570BD001841FB /* ForecastHeaderView.m in Sources */,
+				EF1DCE0B201907E200E84F1F /* CurrencyCell.m in Sources */,
 				DD4F7C1C13C30F9F00825C6E /* ApplicationDelegate.m in Sources */,
+				EF234E892020E14E0043C767 /* CustomSearchField.swift in Sources */,
 				DD4F7C3813C317A500825C6E /* MenubarController.m in Sources */,
 				DD4F7C3C13C3180800825C6E /* StatusItemView.m in Sources */,
 				DD4F7C3F13C318D600825C6E /* PanelController.m in Sources */,
+				EF1DCE0E201907F900E84F1F /* HoldingCell.m in Sources */,
+				EFE1205920194BD600878450 /* CustomVC.swift in Sources */,
+				EF225638203C2FE700C2F9E4 /* AccountsCell.m in Sources */,
 				DD4F7C4413C31BD200825C6E /* Panel.m in Sources */,
 				DD4F7C4713C3208500825C6E /* BackgroundView.m in Sources */,
+				EF1DCE112019090E00E84F1F /* PriceCell.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -300,7 +460,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				MACOSX_DEPLOYMENT_TARGET = 10.6;
+				MACOSX_DEPLOYMENT_TARGET = 10.13;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = macosx;
 			};
@@ -339,35 +499,46 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				MACOSX_DEPLOYMENT_TARGET = 10.6;
+				MACOSX_DEPLOYMENT_TARGET = 10.13;
 				SDKROOT = macosx;
 			};
 			name = Release;
 		};
 		DD4F7C2313C30F9F00825C6E /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 558D8CB909824D8C851C6CBE /* Pods-Popup.debug.xcconfig */;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				CLANG_ENABLE_OBJC_ARC = YES;
 				COMBINE_HIDPI_IMAGES = YES;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Popup/Popup-Prefix.pch";
 				INFOPLIST_FILE = "Popup/Popup-Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.shpakovski.mac.popup;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "Popup/Popup-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 3.0;
 				WRAPPER_EXTENSION = app;
 			};
 			name = Debug;
 		};
 		DD4F7C2413C30F9F00825C6E /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 57891AD3513D9599254C6D99 /* Pods-Popup.release.xcconfig */;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				CLANG_ENABLE_OBJC_ARC = YES;
 				COMBINE_HIDPI_IMAGES = YES;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Popup/Popup-Prefix.pch";
 				INFOPLIST_FILE = "Popup/Popup-Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.shpakovski.mac.popup;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "Popup/Popup-Bridging-Header.h";
+				SWIFT_VERSION = 3.0;
 				WRAPPER_EXTENSION = app;
 			};
 			name = Release;
