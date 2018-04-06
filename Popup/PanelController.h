@@ -13,7 +13,7 @@
 
 #pragma mark -
 
-@interface PanelController : NSWindowController <NSWindowDelegate, NSTableViewDelegate, NSTableViewDataSource,NSTextFieldDelegate>
+@interface PanelController : NSWindowController <NSWindowDelegate, NSTableViewDelegate, NSTableViewDataSource,NSTextFieldDelegate, NSGestureRecognizerDelegate>
 {
     
     BOOL _hasActivePanel;
@@ -29,6 +29,10 @@
     NSMutableArray *accountsArray;
     NSTimer *updateTimer;
     
+    NSInteger clickedRow;
+    
+  
+    
     int hideBalances;
     
     NSString *currenctAccount;
@@ -36,6 +40,12 @@
     NSMutableDictionary *allcoins;
     
 }
+
+- (IBAction) deleteCurrency:(id)sender;
+
+@property (weak) IBOutlet NSButton *accountsB;
+@property (weak) IBOutlet NSButton *shareB;
+@property (weak) IBOutlet NSButton *settingsB;
 
 // ADD ACC
 - (IBAction)save:(id)sender;
@@ -47,13 +57,11 @@
 
 // MORE MENU
 @property (weak) IBOutlet NSView *moreMenu;
-@property (weak) IBOutlet NSButton *accounts;
-@property (weak) IBOutlet NSButton *hideBalances;
+
 @property (weak) IBOutlet NSButton *settings;
 @property (weak) IBOutlet NSButton *share;
 
 - (IBAction)accounts:(id)sender;
-- (IBAction)hideBalances:(id)sender;
 - (IBAction)share:(id)sender;
 - (IBAction)settings:(id)sender;
 

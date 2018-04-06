@@ -180,9 +180,9 @@
     [[NSUserDefaults standardUserDefaults] setDouble:160 forKey:@"OMG_BuyPrice"];
     [[NSUserDefaults standardUserDefaults] setDouble:30 forKey:@"NEO_BuyPrice"];
     
-
-    
-    [[NSUserDefaults standardUserDefaults] setObject:[[NSArray alloc]initWithObjects:@"BTC",@"OMG",@"ADA",@"NEO", nil] forKey:@"holdings"];
+    if ([[NSUserDefaults standardUserDefaults] objectForKey:@"holdings"] == nil) {
+       [[NSUserDefaults standardUserDefaults] setObject:[[NSArray alloc]initWithObjects:@"BTC",@"OMG",@"ADA",@"NEO", nil] forKey:@"holdings"];
+    }
     
     allcoins = [[NSMutableDictionary alloc]init];
     
@@ -199,7 +199,7 @@
     
     
     // loadSavedData
-    currencies = [[NSUserDefaults standardUserDefaults] objectForKey:@"holdings"];
+    currencies = [[NSMutableArray alloc]initWithArray:[[NSUserDefaults standardUserDefaults] objectForKey:@"holdings"]];
     self.account.stringValue = [[NSUserDefaults standardUserDefaults] stringForKey:@"currentAcc"];
     
     filteredArray = [[NSMutableArray alloc] init];
@@ -248,6 +248,10 @@
     self.searchTableView.dataSource = self;
     self.searchTableView.delegate = self;
     
+    NSClickGestureRecognizer *rec = [[NSClickGestureRecognizer alloc]initWithTarget:self action:@selector(click:)];
+    
+    [self.moreMenu addGestureRecognizer:rec];
+    
     [[NSNotificationCenter defaultCenter] addObserver:self
                                              selector:@selector(receiveTestNotification:)
                                                  name:@"TestNotification"
@@ -257,6 +261,59 @@
 }
 
 
+-(void)click:(NSClickGestureRecognizer *) g {
+   
+    NSLog(@"%f",[g locationInView:self.moreMenu].x);
+    
+    if (CGRectContainsPoint(self.accountsB.frame, [g locationInView:self.moreMenu])) {
+        
+        [NSAnimationContext runAnimationGroup:^(NSAnimationContext *context) {
+            
+            context.duration = 0.4;
+            self.mainView.animator.alphaValue = 0;
+            self.accountsView.animator.alphaValue = 1;
+            
+        }
+                            completionHandler:^{
+                                
+                                self.mainView.hidden = YES;
+                                self.accountsView.hidden =  NO;
+                                
+                                [self.accountsTableView reloadData];
+                                
+                            }];
+        
+    }
+    
+    if (CGRectContainsPoint(self.shareB.frame, [g locationInView:self.moreMenu])) {
+        
+        
+        
+    }
+    
+    if (CGRectContainsPoint(self.settingsB.frame, [g locationInView:self.moreMenu])) {
+        
+        [NSAnimationContext runAnimationGroup:^(NSAnimationContext *context) {
+            context.duration = 0.4;
+            self.mainView.animator.alphaValue = 0;
+            self.settingsView.animator.alphaValue = 1;
+        }
+                            completionHandler:^{
+                                
+                                self.mainView.hidden = YES;
+                                self.settingsView.hidden =  NO;
+                                
+                                
+                                
+                            }];
+        
+    }
+    
+    if (!CGRectContainsPoint(CGRectMake(210, 361, 210, 232), [g locationInView:self.moreMenu])) {
+       self.moreMenu.hidden = true;
+    }
+    
+}
 
 - (void) receiveTestNotification:(NSNotification *) notification
 {
@@ -546,7 +603,8 @@
         }
         
         return [[NSView alloc] init];
-    }
+        
+  }
     
    if (tableView == self.searchTableView) {
         if ([tableColumn.identifier isEqualToString:@"Search"]) {
@@ -568,7 +626,7 @@
         return [[NSView alloc] init];
     }
    
-    //let cell = tableView.makeViewWithIdentifier((tableColumn!.identifier), owner: self) as? NSTableCellView
+    // let cell = tableView.makeViewWithIdentifier((tableColumn!.identifier), owner: self) as? NSTableCellView
     
     NSString *currency = [currencies objectAtIndex:row];
     
@@ -613,29 +671,38 @@
      
      */
     
-
-
     return [[NSView alloc] init];
     
 }
 
--(void)clickedRowS {
+-(void)saveCurrencies {
+      [[NSUserDefaults standardUserDefaults] setObject:currencies forKey:@"holdings"];
+}
+
+- (void)clickedRowS {
+    
+    NSLog(@"%@",[filteredArray objectAtIndex:self.searchTableView.clickedRow]);
+   
+    [currencies addObject:[filteredArray objectAtIndex:self.searchTableView.clickedRow]];
+    
+    [self saveCurrencies];
+    
+    [self downloadPrices];
     
     [NSAnimationContext runAnimationGroup:^(NSAnimationContext *context) {
         context.duration = 0.4;
         self.mainView.animator.alphaValue = 1;
         self.searchView.animator.alphaValue = 0;
-    }
-                        completionHandler:^{
+    } completionHandler:^{
                             
-                            self.mainView.hidden = NO;
-                            self.searchView.hidden =  YES;
-                            
-                            
-                            
-                        }];
+          self.mainView.hidden = NO;
+          self.searchView.hidden =  YES;
+        
+    }];
+     
     
-}
+    
+   }
 
 - (void)clickedRowA {
     
@@ -662,6 +729,8 @@
     
     NSLog(@"%d",self.tableView.clickedRow);
     
+    clickedRow = self.tableView.clickedRow;
+    
     self.name.stringValue = [currencies objectAtIndex:self.tableView.clickedRow];
     self.imageInfo.image = [NSImage imageNamed:[currencies objectAtIndex:self.tableView.clickedRow]];
     
@@ -673,7 +742,7 @@
                         completionHandler:^{
                              self.mainView.hidden = YES;
                              self.infoView.hidden = NO;
-                        }];
+        }];
     
     
     
@@ -684,7 +753,6 @@
 -(NSInteger) numberOfRowsInTableView:(NSTableView *)tableView {
     
     if (tableView == self.accountsTableView) {
-        
         
         return [accountsArray count];
         
@@ -798,6 +866,7 @@
                         }];
     
 }
+
 - (IBAction)backInfoView:(id)sender {
     
     [NSAnimationContext runAnimationGroup:^(NSAnimationContext *context) {
@@ -842,7 +911,7 @@
                             self.mainView.hidden = YES;
                             self.accountsView.hidden =  NO;
                             
-                              [self.accountsTableView reloadData];
+                            [self.accountsTableView reloadData];
                             
                         }];
     
@@ -888,9 +957,7 @@
                             
                             self.accountsView.hidden = YES;
                             self.addAccountView.hidden =  NO;
-                            
-                            
-                            
+
                         }];
     
 }
@@ -936,14 +1003,35 @@
         self.accountsView.animator.alphaValue = 1;
         self.addAccountView.animator.alphaValue = 0;
     }
+        completionHandler:^{
+                            
+        self.accountsView.hidden = NO;
+        self.addAccountView.hidden =  YES;
+            
+    }];
+    
+    
+}
+
+
+- (IBAction)deleteCurrency:(id)sender {
+    
+    [currencies removeObjectAtIndex:clickedRow];
+    
+    [self saveCurrencies];
+    
+    [NSAnimationContext runAnimationGroup:^(NSAnimationContext *context) {
+        context.duration = 0.4;
+        self.mainView.animator.alphaValue = 1;
+        self.infoView.animator.alphaValue = 0;
+    }
                         completionHandler:^{
-                            
-                            self.accountsView.hidden = NO;
-                            self.addAccountView.hidden =  YES;
-                            
-                            
-                            
+                            self.mainView.hidden = NO;
+                            self.infoView.hidden = TRUE;
                         }];
+
+    
+    [self.tableView reloadData];
     
     
 }
