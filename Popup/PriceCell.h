@@ -11,6 +11,7 @@
 
 @property (assign) IBOutlet NSTextField *secondTextField;
 @property (assign) IBOutlet NSTextField *secondTextField2;
+@property (assign) int taggy;
 
 - (IBAction)alertBellPressed:(id)sender;
 

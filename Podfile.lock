@@ -1,0 +1,12 @@
+PODS:
+  - FlatButton (1.2)
+
+DEPENDENCIES:
+  - FlatButton
+
+SPEC CHECKSUMS:
+  FlatButton: 9995b972cd520be091f0ba6b215b84cbe7d46fa8
+
+PODFILE CHECKSUM: 6b8ff5036603a4f3a3b431e5833d31cd40ccb5db
+
+COCOAPODS: 1.4.0

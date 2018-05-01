@@ -10,6 +10,7 @@
 #import "SearchCell.h"
 #import "SCell.h"
 #import "AccountsCell.h"
+#import "TransactionCell.h"
 
 #define OPEN_DURATION .15
 #define CLOSE_DURATION .1
@@ -71,7 +72,7 @@
     
 }
 
-#pragma mark -
+#pragma mark - API calls
 
 -(void)calculateHoldings{
 
@@ -88,7 +89,7 @@
     
 }
 
--(void)getAllCoins{
+-(void) getAllCoins{
 
     NSMutableURLRequest *request = [[NSMutableURLRequest alloc] init];
     [request setURL:[NSURL URLWithString:[NSString stringWithFormat:@"https://www.cryptocompare.com/api/data/coinlist/"]]];
@@ -100,9 +101,9 @@
         allcoins = resp[@"Data"];
         currenciesNames = [[NSMutableArray alloc]initWithArray:[allcoins allKeys]];
         dispatch_async(dispatch_get_main_queue(), ^{
-            // do work hereg
             
-         
+            // do work here
+            
             // set balance
             // Store response
                 [self.tableView reloadData];
@@ -133,6 +134,69 @@
             // set balance
             [self calculateHoldings];
             
+            // Calculate growth
+            
+            // calculate if
+            
+            double avg = 0;
+            
+            for (NSString *currency in currencies) {
+                
+                NSString *avragePrice = [NSString stringWithFormat:@"%@_avgPrice",currency];
+                
+                avg += [[NSUserDefaults standardUserDefaults] doubleForKey:avragePrice];
+                
+                double price = [prices[currency][@"USD"] doubleValue];
+                
+                NSString *string = [NSString stringWithFormat:@"%@_alerts",currency];
+                
+                
+                NSData *archive = [[NSUserDefaults standardUserDefaults] valueForKey:string];
+                
+                NSMutableArray *alerts = [NSKeyedUnarchiver unarchiveObjectWithData:archive];
+                
+                for (NSDictionary *alertPrice in alerts) {
+                    if (price > [alertPrice[@"price"] doubleValue] && [alertPrice[@"type"] isEqualToString:@"Over"]) {
+                        NSAlert *alert = [[NSAlert alloc] init];
+                        [alert addButtonWithTitle:@"OK"];
+                        // [alert addButtonWithTitle:@"Cancel"];
+                        [alert setMessageText:@"Price alert"];
+                        [alert setInformativeText:[NSString stringWithFormat:@"%@ price over %@",currency, alertPrice[@"price"]]];
+                        [alert setAlertStyle:NSAlertStyleInformational];
+                        [alert runModal];
+                        
+                        if ([alertPrice[@"repeat"] isEqualToString:@"NO"]) {
+                            [alerts removeObject:alertPrice];
+                            [[NSUserDefaults standardUserDefaults] setValue:[NSKeyedArchiver archivedDataWithRootObject:alerts] forKey:string];
+                        }
+                        
+                    }
+                    
+                    if (price < [alertPrice[@"price"] doubleValue] && [alertPrice[@"type"] isEqualToString:@"Under"]) {
+                        NSAlert *alert = [[NSAlert alloc] init];
+                        [alert addButtonWithTitle:@"OK"];
+                        // [alert addButtonWithTitle:@"Cancel"];
+                        [alert setMessageText:@"Price alert"];
+                        [alert setInformativeText:[NSString stringWithFormat:@"%@ price over %@",currency, alertPrice[@"price"]]];
+                        [alert setAlertStyle:NSAlertStyleInformational];
+                        [alert runModal];
+                        
+                        if ([alertPrice[@"repeat"] isEqualToString:@"NO"]) {
+                            [alerts removeObject:alertPrice];
+                            [[NSUserDefaults standardUserDefaults] setValue:[NSKeyedArchiver archivedDataWithRootObject:alerts] forKey:string];
+                        }
+                        
+                    }
+                    
+                    
+                }
+            }
+            
+           
+            avg = avg/currencies.count;
+            
+            self.plusToday.stringValue = [NSString stringWithFormat:@"+%.2f $",[self.balance.stringValue doubleValue]-avg];
+            
             [self.tableView reloadData];
         });
         
@@ -142,7 +206,12 @@
 
 }
 
+#pragma mark - init
+
 -(void)setup {
+    
+  //   NSString *appDomain = [[NSBundle mainBundle] bundleIdentifier];
+  // [[NSUserDefaults standardUserDefaults] removePersistentDomainForName:appDomain];
     
     [self.window.contentView addSubview:self.mainView];
     [self.window.contentView addSubview:self.donareView];
@@ -152,6 +221,7 @@
     [self.window.contentView addSubview:self.accountsView];
     [self.window.contentView addSubview:self.settingsView];
     [self.window.contentView addSubview:self.addAccountView];
+    [self.window.contentView addSubview:self.addTransactionView];
     self.donareView.alphaValue = 0;
     self.searchView.alphaValue = 0;
     self.accountsView.alphaValue = 0;
@@ -159,6 +229,7 @@
     self.addAccountView.alphaValue = 0;
     self.infoView.alphaValue = 0;
     self.alertView.alphaValue = 0;
+    self.addTransactionView.alphaValue = 0;
     self.donareView.hidden = true;
     self.searchView.hidden = true;
     self.infoView.hidden = true;
@@ -166,23 +237,14 @@
     self.accountsView.hidden = true;
     self.settingsView.hidden = true;
     self.addAccountView.hidden = true;
+    self.addTransactionView.hidden = true;
+    
     
   //  [self.tableView removeTableColumn:self.column];
     self.searchTextField2.delegate = self;
 
-    [[NSUserDefaults standardUserDefaults] setDouble:0.3 forKey:@"BTC"];
-    [[NSUserDefaults standardUserDefaults] setDouble:100 forKey:@"ADA"];
-    [[NSUserDefaults standardUserDefaults] setDouble:160 forKey:@"OMG"];
-    [[NSUserDefaults standardUserDefaults] setDouble:30 forKey:@"NEO"];
+
     
-    [[NSUserDefaults standardUserDefaults] setDouble:0.3 forKey:@"BTC_BuyPrice"];
-    [[NSUserDefaults standardUserDefaults] setDouble:100 forKey:@"ADA_BuyPrice"];
-    [[NSUserDefaults standardUserDefaults] setDouble:160 forKey:@"OMG_BuyPrice"];
-    [[NSUserDefaults standardUserDefaults] setDouble:30 forKey:@"NEO_BuyPrice"];
-    
-    if ([[NSUserDefaults standardUserDefaults] objectForKey:@"holdings"] == nil) {
-       [[NSUserDefaults standardUserDefaults] setObject:[[NSArray alloc]initWithObjects:@"BTC",@"OMG",@"ADA",@"NEO", nil] forKey:@"holdings"];
-    }
     
     allcoins = [[NSMutableDictionary alloc]init];
     
@@ -200,7 +262,20 @@
     
     // loadSavedData
     currencies = [[NSMutableArray alloc]initWithArray:[[NSUserDefaults standardUserDefaults] objectForKey:@"holdings"]];
-    self.account.stringValue = [[NSUserDefaults standardUserDefaults] stringForKey:@"currentAcc"];
+    if ([[NSUserDefaults standardUserDefaults] stringForKey:@"currentAcc"] != nil) {
+        self.account.stringValue = [[NSUserDefaults standardUserDefaults] stringForKey:@"currentAcc"];
+    } else {
+        [[NSUserDefaults standardUserDefaults] setValue:@"Account1" forKey:@"currentAcc"];
+        self.account.stringValue = @"Account1";
+    }
+    
+    
+    for (NSString *currency in currencies) {
+        [self calculateHoldingsFor:currency];
+    }
+    
+    transactionArray = [[NSMutableArray alloc]init];
+    
     
     filteredArray = [[NSMutableArray alloc] init];
     
@@ -208,7 +283,7 @@
     
     if ([accountsArray count] == 0) {
         
-        accountsArray = [[NSMutableArray alloc] init];
+        accountsArray = [[NSMutableArray alloc] initWithObjects:@"Account1", nil];
         
     }
     
@@ -216,7 +291,12 @@
 
     [self.searchTableView setCornerView:nil];
     [self.searchTableView setSelectionHighlightStyle:NSTableViewSelectionHighlightStyleNone];
-    [tableView setCornerView:nil];
+    
+    [self.tableView setCornerView:nil];
+    
+    [self.infoTableview setCornerView:nil];
+    [self.infoTableview setSelectionHighlightStyle:NSTableViewSelectionHighlightStyleNone];
+    
     
     [self.accountsTableView setCornerView:nil];
     [self.accountsTableView setSelectionHighlightStyle:NSTableViewSelectionHighlightStyleNone];
@@ -227,6 +307,24 @@
         [self downloadPrices];
         
     }];
+    
+    NSColor *color = [NSColor whiteColor];
+    NSMutableAttributedString *colorTitle = [[NSMutableAttributedString alloc] initWithAttributedString:[self.accountsB attributedTitle]];
+    NSRange titleRange = NSMakeRange(0, [colorTitle length]);
+    [colorTitle addAttribute:NSForegroundColorAttributeName value:color range:titleRange];
+    [self.accountsB setAttributedTitle:colorTitle];
+    
+    NSMutableAttributedString *colorTitle2 = [[NSMutableAttributedString alloc] initWithAttributedString:[self.settingsB attributedTitle]];
+    NSRange titleRange2 = NSMakeRange(0, [colorTitle2 length]);
+    [colorTitle2 addAttribute:NSForegroundColorAttributeName value:color range:titleRange2];
+    [self.settingsB setAttributedTitle:colorTitle2];
+    
+    NSMutableAttributedString *colorTitle3 = [[NSMutableAttributedString alloc] initWithAttributedString:[self.shareB attributedTitle]];
+    NSRange titleRange3 = NSMakeRange(0, [colorTitle3 length]);
+    [colorTitle3 addAttribute:NSForegroundColorAttributeName value:color range:titleRange3];
+    [self.shareB setAttributedTitle:colorTitle3];
+    
+    // placeholder color setup
     
     [self.tableView reloadData];
     
@@ -247,6 +345,9 @@
     
     self.searchTableView.dataSource = self;
     self.searchTableView.delegate = self;
+    
+    self.infoTableview.dataSource = self;
+    self.infoTableview.delegate = self;
     
     NSClickGestureRecognizer *rec = [[NSClickGestureRecognizer alloc]initWithTarget:self action:@selector(click:)];
     
@@ -273,7 +374,7 @@
             self.mainView.animator.alphaValue = 0;
             self.accountsView.animator.alphaValue = 1;
             
-        }
+    }
                             completionHandler:^{
                                 
                                 self.mainView.hidden = YES;
@@ -286,9 +387,7 @@
     }
     
     if (CGRectContainsPoint(self.shareB.frame, [g locationInView:self.moreMenu])) {
-        
-        
-        
+
     }
     
     if (CGRectContainsPoint(self.settingsB.frame, [g locationInView:self.moreMenu])) {
@@ -297,15 +396,15 @@
             context.duration = 0.4;
             self.mainView.animator.alphaValue = 0;
             self.settingsView.animator.alphaValue = 1;
-        }
-                            completionHandler:^{
+    }
+         completionHandler:^{
                                 
                                 self.mainView.hidden = YES;
                                 self.settingsView.hidden =  NO;
                                 
                                 
                                 
-                            }];
+            }];
         
     }
     
@@ -322,8 +421,19 @@
     // unless you use this method for observation of other notifications
     // as well.
     
+    
     if ([[notification name] isEqualToString:@"TestNotification"])
-        NSLog (@"Successfully received the test notification! %d", self.tableView.selectedRow);
+        NSLog (@"Successfully received the test notification! %d", [[notification object] taggy]);
+    
+    
+    NSString *currency = [currencies objectAtIndex:[[notification object] taggy]];
+    
+    selectedCurrency = currency;
+    
+    self.currentBtcPrice.stringValue =  [NSString stringWithFormat:@"current %@ price: %.2f $", currency,[prices[currency][@"USD"] doubleValue]];
+    
+    self.alertTextField.stringValue = [NSString stringWithFormat:@"%.2f", [prices[currency][@"USD"] doubleValue]];
+
     
     [NSAnimationContext runAnimationGroup:^(NSAnimationContext *context) {
         context.duration = 0.4;
@@ -415,12 +525,12 @@
     [NSAnimationContext runAnimationGroup:^(NSAnimationContext *context) {
         context.duration = 0.4;
         self.mainView.animator.alphaValue = 1;
-        self.accountsView.animator.alphaValue = 0;
+        self.alertView.animator.alphaValue = 0;
     }
                         completionHandler:^{
                             
                             self.mainView.hidden = NO;
-                            self.accountsView.hidden =  YES;
+                            self.alertView.hidden =  YES;
                             
                             
                             
@@ -583,9 +693,53 @@
     [self.textField setStringValue:searchRequest];
 }
 
+- (NSString *) getRealPrice:(NSString *) price {
+    NSArray* words = [price componentsSeparatedByCharactersInSet :[NSCharacterSet whitespaceAndNewlineCharacterSet]];
+    NSString* nospacestring = [words componentsJoinedByString:@""];
+    return [nospacestring stringByReplacingOccurrencesOfString:@"," withString:@"."];
+}
+
 #pragma mark - TableView Data Source and Delegate
 
 -(NSView *) tableView:(NSTableView *)tableView viewForTableColumn:(NSTableColumn *)tableColumn row:(NSInteger)row {
+    
+    if (tableView == self.infoTableview) {
+        
+        if ([tableColumn.identifier isEqualToString:@"Transaction"]) {
+            
+            
+            TransactionCell *view = [self.infoTableview makeViewWithIdentifier:tableColumn.identifier owner:self];
+            
+            if ([[transactionArray objectAtIndex:row][@"quantity"] doubleValue] > 0) {
+                view.sellorBuy.image = [NSImage imageNamed:@"Buy"];
+                view.descriptor.stringValue = [NSString stringWithFormat:@"Bought %@ %@", [transactionArray objectAtIndex:row][@"quantity"], self.name.stringValue];
+            } else {
+                view.sellorBuy.image = [NSImage imageNamed:@"Sell"];
+                view.descriptor.stringValue = [NSString stringWithFormat:@"Sold %@ %@", [transactionArray objectAtIndex:row][@"quantity"], self.name.stringValue];
+            }
+            
+            view.bought.stringValue = [NSString stringWithFormat:@"%.2f $",[[self getRealPrice:[transactionArray objectAtIndex:row][@"price"] ] doubleValue] * [[transactionArray objectAtIndex:row][@"quantity"] doubleValue]];
+            view.price.stringValue = [NSString stringWithFormat:@"%@ $",[self getRealPrice:[transactionArray objectAtIndex:row][@"price"]]];
+            view.quantity.stringValue = [transactionArray objectAtIndex:row][@"quantity"];
+            if ([transactionArray objectAtIndex:row][@"notes"] != nil) {
+                view.notes.stringValue = [transactionArray objectAtIndex:row][@"notes"];
+            } else {
+                view.notes.stringValue = @"";
+            }
+            
+            // view.secondTextField.stringValue = [filteredArray objectAtIndex:row];
+            // view.wantsLayer = true;
+            // view.layer.backgroundColor = [[NSColor colorWithRed:35/255.f green:42/255.f blue:52/255.f alpha:1] CGColor];
+            //  dispatch_async(dispatch_get_main_queue(), ^{
+            //  view.btc.image = [[NSImage alloc] initWithContentsOfURL:[NSURL URLWithString:[NSString stringWithFormat:@"https://www.cryptocompare.com%@",allcoins[[filteredArray objectAtIndex:row]][@"ImageUrl"]]]];
+            //   });
+            //  view.btc.layer.cornerRadius = view.btc.layer.frame.size.height/2;
+            
+            return view;
+        }
+        
+        return [[NSView alloc] init];
+    }
 
     if (tableView == self.accountsTableView) {
         
@@ -653,11 +807,31 @@
         PriceCell *view = [tableView makeViewWithIdentifier:tableColumn.identifier owner:self];
         
         if (prices[currency] != nil) {
-        view.secondTextField.stringValue = prices[currency][@"USD"];
+            view.secondTextField.stringValue =  [NSString stringWithFormat:@"%.2f $", [prices[currency][@"USD"] doubleValue]];
+        }
+        
+        view.taggy = row;
+        
+        NSString *avragePrice = [NSString stringWithFormat:@"%@_avgPrice",currency];
+        
+        double avg =  [prices[currency][@"USD"] doubleValue] - [[NSUserDefaults standardUserDefaults] doubleForKey:avragePrice];
+        
+        if ([[NSUserDefaults standardUserDefaults] doubleForKey:avragePrice] != 0) {
+        if (avg > 0) {
+            view.secondTextField2.stringValue = [NSString stringWithFormat:@"+%.2f $",avg];
+            view.secondTextField2.textColor = [NSColor greenColor];
+        } else {
+          view.secondTextField2.stringValue =  [NSString stringWithFormat:@"%.2f $",avg];
+            view.secondTextField2.textColor = [NSColor redColor];
+        }
+        } else {
+            view.secondTextField2.stringValue =  @"";
         }
         
         return view;
     }
+    
+ 
 
     /*
     
@@ -683,6 +857,10 @@
     
     NSLog(@"%@",[filteredArray objectAtIndex:self.searchTableView.clickedRow]);
    
+    if ([currencies containsObject:[filteredArray objectAtIndex:self.searchTableView.clickedRow]]) {
+        return;
+    }
+    
     [currencies addObject:[filteredArray objectAtIndex:self.searchTableView.clickedRow]];
     
     [self saveCurrencies];
@@ -706,8 +884,9 @@
 
 - (void)clickedRowA {
     
-   self.account.stringValue = [accountsArray objectAtIndex:self.accountsTableView.clickedRow];
     [[NSUserDefaults standardUserDefaults] setValue:[accountsArray objectAtIndex:self.accountsTableView.clickedRow] forKey:@"currentAcc"];
+    
+    self.account.stringValue = [accountsArray objectAtIndex:self.accountsTableView.clickedRow];
     
     [NSAnimationContext runAnimationGroup:^(NSAnimationContext *context) {
         context.duration = 0.4;
@@ -720,7 +899,6 @@
                             self.accountsView.hidden =  YES;
                             
                             
-                            
                         }];
 
 }
@@ -730,6 +908,34 @@
     NSLog(@"%d",self.tableView.clickedRow);
     
     clickedRow = self.tableView.clickedRow;
+    
+    [self getTrasactionHistory:[currencies objectAtIndex:self.tableView.clickedRow]];
+    [self.infoTableview reloadData];
+    
+    NSString *currency = [currencies objectAtIndex:self.tableView.clickedRow];
+    
+    double price = [prices[currency][@"USD"] doubleValue];
+    self.holdings.stringValue = [NSString stringWithFormat:@"%.2f $",[[NSUserDefaults standardUserDefaults] doubleForKey:currency]*price];
+    
+    NSString *avragePrice = [NSString stringWithFormat:@"%@_avgPrice",currency];
+    
+    double avg = [prices[currency][@"USD"] doubleValue] - [[NSUserDefaults standardUserDefaults] doubleForKey:avragePrice];
+    
+    if ([[NSUserDefaults standardUserDefaults] doubleForKey:avragePrice] != 0) {
+        if (avg > 0) {
+            self.profitOrLoss.stringValue = [NSString stringWithFormat:@"+%.2f $",avg];
+            self.profitOrLoss.textColor = [NSColor greenColor];
+        } else {
+            self.profitOrLoss.stringValue =  [NSString stringWithFormat:@"%.2f $",avg];
+            self.profitOrLoss.textColor = [NSColor redColor];
+        }
+    } else {
+        self.profitOrLoss.stringValue =  @"";
+    }
+    
+    self.profitOrLoss.stringValue = [NSString stringWithFormat:@"%.2f $", avg];
+    
+    self.netLoss.stringValue = [NSString stringWithFormat:@"%.2f $", [[NSUserDefaults standardUserDefaults] doubleForKey:avragePrice]];
     
     self.name.stringValue = [currencies objectAtIndex:self.tableView.clickedRow];
     self.imageInfo.image = [NSImage imageNamed:[currencies objectAtIndex:self.tableView.clickedRow]];
@@ -760,6 +966,10 @@
     
     if (tableView == self.searchTableView) {
         return [filteredArray count];
+    }
+    
+    if (tableView == self.infoTableview) {
+        return [transactionArray count];
     }
     
     return [currencies count];
@@ -897,8 +1107,6 @@
 
 - (IBAction)accounts:(id)sender {
     
-  
-    
     [NSAnimationContext runAnimationGroup:^(NSAnimationContext *context) {
         
         context.duration = 0.4;
@@ -969,7 +1177,9 @@
 }
 
 - (IBAction)chart:(id)sender {
+    
 }
+
 - (IBAction)hideSettings:(id)sender {
     
     [NSAnimationContext runAnimationGroup:^(NSAnimationContext *context) {
@@ -985,6 +1195,8 @@
     
 }
 
+
+
 - (IBAction)addB:(id)sender {
 }
 
@@ -993,6 +1205,8 @@
     [accountsArray addObject:self.addAccTextField.stringValue];
     
     [self saveAccounts];
+    
+    self.account.stringValue = self.addAccTextField.stringValue;
     
     self.addAccTextField.stringValue = @"";
     
@@ -1013,6 +1227,116 @@
     
 }
 
+- (float)calculateHoldingsFor:(NSString *) name {
+    
+    NSString *string = [NSString stringWithFormat:@"%@_history",name];
+    
+    NSData *archive = [[NSUserDefaults standardUserDefaults] valueForKey:string];
+    
+    NSMutableArray *transactionHistory = [NSKeyedUnarchiver unarchiveObjectWithData:archive];
+    
+    
+    double sum = 0;
+    double avgPrice = 0;
+    
+    for (NSDictionary *d in transactionHistory) {
+        
+        sum += [d[@"quantity"] doubleValue];
+        avgPrice += [[self getRealPrice: d[@"price"]] doubleValue];
+        
+    }
+    
+    avgPrice = avgPrice/transactionHistory.count;
+    
+    NSString *avragePrice = [NSString stringWithFormat:@"%@_avgPrice",name];
+    
+    if (transactionHistory.count != 0) {
+         [[NSUserDefaults standardUserDefaults] setDouble:avgPrice forKey:avragePrice];
+    }
+    
+    [[NSUserDefaults standardUserDefaults] setDouble:sum forKey:name];
+    
+    return sum;
+    
+}
+
+-(NSMutableArray *)getTrasactionHistory:(NSString *) name {
+    
+    NSString *string = [NSString stringWithFormat:@"%@_history",name];
+    
+    NSData *archive = [[NSUserDefaults standardUserDefaults] valueForKey:string];
+    
+    transactionArray = [NSKeyedUnarchiver unarchiveObjectWithData:archive];
+    
+    return transactionArray;
+    
+}
+
+- (IBAction)saveTransaction:(id)sender {
+    
+    NSString *string = [NSString stringWithFormat:@"%@_history",self.currencyName.stringValue];
+    
+    NSData *archive = [[NSUserDefaults standardUserDefaults] valueForKey:string];
+    
+    NSMutableArray *transactionHistory = [NSKeyedUnarchiver unarchiveObjectWithData:archive];
+    
+    if (transactionHistory == nil) {
+        transactionHistory = [[NSMutableArray alloc] init];
+    }
+    
+    NSString *quantity = self.Quantity.stringValue;
+    
+    if (sell == true) {
+        quantity = [NSString stringWithFormat:@"-%@",self.Quantity.stringValue];
+    }
+
+    [transactionHistory addObject:@{@"quantity":quantity, @"price":self.sell.stringValue,  @"notes":self.notes.stringValue}];
+    
+    [[NSUserDefaults standardUserDefaults] setValue:[NSKeyedArchiver archivedDataWithRootObject:transactionHistory] forKey:[NSString stringWithFormat:@"%@_history",self.currencyName.stringValue]];
+    
+    [self calculateHoldingsFor:self.currencyName.stringValue];
+    
+    transactionArray = transactionHistory;
+    
+}
+
+- (IBAction)transactionBack:(id)sender {
+    
+    [self.infoTableview reloadData];
+    
+    [NSAnimationContext runAnimationGroup:^(NSAnimationContext *context) {
+        context.duration = 0.4;
+        self.addTransactionView.animator.alphaValue = 0;
+        self.infoView.animator.alphaValue = 1;
+    }
+                        completionHandler:^{
+                            self.addTransactionView.hidden = YES;
+                            self.infoView.hidden = NO;
+                        }];
+    
+}
+
+- (IBAction)buy:(id)sender {
+    
+     sell = false;
+    
+    self.buyButton.image = [NSImage imageNamed:@"buy_selected"];
+    self.sellButton.image = [NSImage imageNamed:@"sell_unselected"];
+
+    
+}
+
+- (IBAction)sell:(id)sender {
+    
+    
+    sell = true;
+    
+    self.sellButton.image = [NSImage imageNamed:@"sell_selected"];
+    self.buyButton.image = [NSImage imageNamed:@"buy_unselected"];
+    
+    
+    
+}
 
 - (IBAction)deleteCurrency:(id)sender {
     
@@ -1035,6 +1359,83 @@
     
     
 }
+
+
+- (IBAction)addTransaction:(id)sender {
+    
+   
+    
+    self.currencyName.stringValue = self.name.stringValue;
+    self.sell.stringValue = prices[self.name.stringValue][@"USD"];
+    
+    [NSAnimationContext runAnimationGroup:^(NSAnimationContext *context) {
+        context.duration = 0.4;
+        self.addTransactionView.animator.alphaValue = 1;
+        self.infoView.animator.alphaValue = 0;
+    }
+                        completionHandler:^{
+                            self.addTransactionView.hidden = NO;
+                            self.infoView.hidden = TRUE;
+                        }];
+    
+}
+
+
+- (IBAction)saveAlert:(id)sender {
+    
+     NSString *string = [NSString stringWithFormat:@"%@_alerts",selectedCurrency];
+
+    
+    NSData *archive = [[NSUserDefaults standardUserDefaults] valueForKey:string];
+    
+    NSMutableArray *alerts = [NSKeyedUnarchiver unarchiveObjectWithData:archive];
+    
+    if (alerts == nil) {
+        alerts = [[NSMutableArray alloc] init];
+    }
+    
+    NSString *repeat2 = @"NO";
+    
+    if (repeat == true) {
+        repeat2 = @"YES";
+    }
+    
+    NSString *type;
+    
+    if ([prices[selectedCurrency][@"USD"] doubleValue] > [self.alertTextField.stringValue doubleValue]) {
+        type = @"Under";
+    } else {
+        type = @"Over";
+    }
+    
+    [alerts addObject:@{@"repeat":repeat2, @"price":self.alertTextField.stringValue,  @"type":type}];
+    
+    [[NSUserDefaults standardUserDefaults] setValue:[NSKeyedArchiver archivedDataWithRootObject:alerts] forKey:string];
+    
+
+}
+
+
+
+
+- (IBAction)once:(id)sender {
+    
+    repeat = false;
+    
+    self.Once.image = [NSImage imageNamed:@"once"];
+    self.repeat.image = [NSImage imageNamed:@"repeat_unselected"];
+    
+}
+
+- (IBAction)repeat:(id)sender {
+    
+    repeat = true;
+    
+    self.Once.image = [NSImage imageNamed:@"once_unselected"];
+    self.repeat.image = [NSImage imageNamed:@"repeat"];
+    
+}
+
 
 
 @end

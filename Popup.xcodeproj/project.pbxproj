@@ -30,8 +30,10 @@
 		EF234E892020E14E0043C767 /* CustomSearchField.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF234E882020E14E0043C767 /* CustomSearchField.swift */; };
 		EF234E8F202107370043C767 /* CustomVew2.m in Sources */ = {isa = PBXBuildFile; fileRef = EF234E8E202107370043C767 /* CustomVew2.m */; };
 		EF301F9A20156821001841FB /* MyHeaderCell.m in Sources */ = {isa = PBXBuildFile; fileRef = EF301F9920156821001841FB /* MyHeaderCell.m */; };
-		EF301FA1201570BD001841FB /* ForecastHeaderView.m in Sources */ = {isa = PBXBuildFile; fileRef = EF301FA0201570BD001841FB /* ForecastHeaderView.m */; };
 		EF77FD1820167A2B009C1B78 /* Media.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EF77FD1720167A2B009C1B78 /* Media.xcassets */; };
+		EFAC44762097626D00CA286E /* TransactionCell.m in Sources */ = {isa = PBXBuildFile; fileRef = EFAC44752097626D00CA286E /* TransactionCell.m */; };
+		EFAC44772097629400CA286E /* TransactionCell.h in Resources */ = {isa = PBXBuildFile; fileRef = EFAC44742097626D00CA286E /* TransactionCell.h */; };
+		EFAC44782097629400CA286E /* TransactionCell.m in Resources */ = {isa = PBXBuildFile; fileRef = EFAC44752097626D00CA286E /* TransactionCell.m */; };
 		EFE1205920194BD600878450 /* CustomVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFE1205820194BD600878450 /* CustomVC.swift */; };
 		EFE1205E20194D2900878450 /* CustomVC2.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFE1205D20194D2900878450 /* CustomVC2.swift */; };
 		EFE1206120194DC200878450 /* CustomVC3.m in Sources */ = {isa = PBXBuildFile; fileRef = EFE1206020194DC200878450 /* CustomVC3.m */; };
@@ -83,11 +85,10 @@
 		EF301F9020155F35001841FB /* Popup-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Popup-Bridging-Header.h"; sourceTree = "<group>"; };
 		EF301F9920156821001841FB /* MyHeaderCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MyHeaderCell.m; sourceTree = "<group>"; };
 		EF301F9B20156989001841FB /* MyHeaderCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MyHeaderCell.h; sourceTree = "<group>"; };
-		EF301F9F201570BD001841FB /* ForecastHeaderView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = ForecastHeaderView.h; path = "/Users/fredrikbixo/Downloads/Popup-master/Popup/ForecastHeaderView.h"; sourceTree = "<absolute>"; };
-		EF301FA0201570BD001841FB /* ForecastHeaderView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = ForecastHeaderView.m; path = "/Users/fredrikbixo/Downloads/Popup-master/Popup/ForecastHeaderView.m"; sourceTree = "<absolute>"; };
 		EF77FD1720167A2B009C1B78 /* Media.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Media.xcassets; sourceTree = "<group>"; };
+		EFAC44742097626D00CA286E /* TransactionCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TransactionCell.h; sourceTree = "<group>"; };
+		EFAC44752097626D00CA286E /* TransactionCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TransactionCell.m; sourceTree = "<group>"; };
 		EFE1205820194BD600878450 /* CustomVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomVC.swift; sourceTree = "<group>"; };
-		EFE1205C20194D0200878450 /* CustomVC3.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = CustomVC3.xib; path = "/Users/fredrikbixo/Downloads/Popup-master/CustomVC3.xib"; sourceTree = "<absolute>"; };
 		EFE1205D20194D2900878450 /* CustomVC2.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomVC2.swift; sourceTree = "<group>"; };
 		EFE1205F20194DC200878450 /* CustomVC3.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CustomVC3.h; sourceTree = "<group>"; };
 		EFE1206020194DC200878450 /* CustomVC3.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CustomVC3.m; sourceTree = "<group>"; };
@@ -152,7 +153,6 @@
 			children = (
 				EF1DCE08201907D800E84F1F /* Cells */,
 				DD4F7C2613C311DF00825C6E /* Controllers */,
-				DD4F7C3913C317EC00825C6E /* Views */,
 				DD4F7C0F13C30F9F00825C6E /* Supporting Files */,
 			);
 			name = Sources;
@@ -171,14 +171,9 @@
 		DD4F7C2613C311DF00825C6E /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				EFA65933207A44DB008297A1 /* MenuBarCode */,
 				DD4F7C1A13C30F9F00825C6E /* ApplicationDelegate.h */,
 				DD4F7C1B13C30F9F00825C6E /* ApplicationDelegate.m */,
-				DD4F7C3613C317A500825C6E /* MenubarController.h */,
-				DD4F7C3713C317A500825C6E /* MenubarController.m */,
-				EF301F9F201570BD001841FB /* ForecastHeaderView.h */,
-				EF301FA0201570BD001841FB /* ForecastHeaderView.m */,
-				EF301F9920156821001841FB /* MyHeaderCell.m */,
-				EF301F9B20156989001841FB /* MyHeaderCell.h */,
 				DD4F7C3D13C318D600825C6E /* PanelController.h */,
 				DD4F7C3E13C318D600825C6E /* PanelController.m */,
 				EF301F9020155F35001841FB /* Popup-Bridging-Header.h */,
@@ -198,6 +193,10 @@
 		DD4F7C2913C3124300825C6E /* XIBs */ = {
 			isa = PBXGroup;
 			children = (
+				DD4F7C4013C31B4A00825C6E /* Panel.xib */,
+				DD4F7C1D13C30F9F00825C6E /* MainMenu.xib */,
+				EFAC44742097626D00CA286E /* TransactionCell.h */,
+				EFAC44752097626D00CA286E /* TransactionCell.m */,
 				EF185162203B719E007B7208 /* SearchCell.h */,
 				EF185161203B719D007B7208 /* SearchCell.m */,
 				EF234E8D202107370043C767 /* CustomVew2.h */,
@@ -208,9 +207,6 @@
 				EF1DCE102019090E00E84F1F /* PriceCell.m */,
 				EF1DCE0A201907E200E84F1F /* CurrencyCell.h */,
 				EF1DCE09201907E200E84F1F /* CurrencyCell.m */,
-				EFE1205C20194D0200878450 /* CustomVC3.xib */,
-				DD4F7C1D13C30F9F00825C6E /* MainMenu.xib */,
-				DD4F7C4013C31B4A00825C6E /* Panel.xib */,
 				EF225636203C2FE700C2F9E4 /* AccountsCell.h */,
 				EF225637203C2FE700C2F9E4 /* AccountsCell.m */,
 				EFE1205D20194D2900878450 /* CustomVC2.swift */,
@@ -224,8 +220,6 @@
 		DD4F7C3913C317EC00825C6E /* Views */ = {
 			isa = PBXGroup;
 			children = (
-				DD4F7C4213C31BD200825C6E /* Panel.h */,
-				DD4F7C4313C31BD200825C6E /* Panel.m */,
 				DD4F7C3A13C3180800825C6E /* StatusItemView.h */,
 				DD4F7C3B13C3180800825C6E /* StatusItemView.m */,
 				DD4F7C4513C3208500825C6E /* BackgroundView.h */,
@@ -252,6 +246,20 @@
 			children = (
 			);
 			name = Cells;
+			sourceTree = "<group>";
+		};
+		EFA65933207A44DB008297A1 /* MenuBarCode */ = {
+			isa = PBXGroup;
+			children = (
+				DD4F7C4213C31BD200825C6E /* Panel.h */,
+				DD4F7C4313C31BD200825C6E /* Panel.m */,
+				DD4F7C3913C317EC00825C6E /* Views */,
+				DD4F7C3613C317A500825C6E /* MenubarController.h */,
+				DD4F7C3713C317A500825C6E /* MenubarController.m */,
+				EF301F9920156821001841FB /* MyHeaderCell.m */,
+				EF301F9B20156989001841FB /* MyHeaderCell.h */,
+			);
+			name = MenuBarCode;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -312,6 +320,8 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				EFAC44772097629400CA286E /* TransactionCell.h in Resources */,
+				EFAC44782097629400CA286E /* TransactionCell.m in Resources */,
 				DD4F7C1F13C30F9F00825C6E /* MainMenu.xib in Resources */,
 				DD4F7C4113C31B4A00825C6E /* Panel.xib in Resources */,
 				EF77FD1820167A2B009C1B78 /* Media.xcassets in Resources */,
@@ -389,7 +399,6 @@
 				EF185163203B719E007B7208 /* SearchCell.m in Sources */,
 				EFE1205E20194D2900878450 /* CustomVC2.swift in Sources */,
 				DD4F7C1513C30F9F00825C6E /* main.m in Sources */,
-				EF301FA1201570BD001841FB /* ForecastHeaderView.m in Sources */,
 				EF1DCE0B201907E200E84F1F /* CurrencyCell.m in Sources */,
 				DD4F7C1C13C30F9F00825C6E /* ApplicationDelegate.m in Sources */,
 				EF234E892020E14E0043C767 /* CustomSearchField.swift in Sources */,
@@ -402,6 +411,7 @@
 				DD4F7C4413C31BD200825C6E /* Panel.m in Sources */,
 				DD4F7C4713C3208500825C6E /* BackgroundView.m in Sources */,
 				EF1DCE112019090E00E84F1F /* PriceCell.m in Sources */,
+				EFAC44762097626D00CA286E /* TransactionCell.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

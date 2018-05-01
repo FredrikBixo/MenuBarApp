@@ -27,11 +27,15 @@
     NSMutableArray *currencies;
     NSMutableArray *filteredArray;
     NSMutableArray *accountsArray;
+    NSMutableArray *transactionArray;
+    
+    BOOL sell;
+    BOOL repeat;
+    
+    NSString *selectedCurrency;
+    
     NSTimer *updateTimer;
-    
     NSInteger clickedRow;
-    
-  
     
     int hideBalances;
     
@@ -41,7 +45,38 @@
     
 }
 
+// Create Alert
+
+@property (weak) IBOutlet NSTextField *alertTextField;
+@property (weak) IBOutlet NSTextField *currentBtcPrice;
+- (IBAction)saveAlert:(id)sender;
+@property (weak) IBOutlet NSButton *Once;
+@property (weak) IBOutlet NSButton *repeat;
+- (IBAction)once:(id)sender;
+- (IBAction)repeat:(id)sender;
+
+
+// Transaction
+@property (strong) IBOutlet NSView *addTransactionView;
+@property (weak) IBOutlet NSTextField *Quantity;
+@property (weak) IBOutlet NSTextField *notes;
+- (IBAction)saveTransaction:(id)sender;
+@property (weak) IBOutlet NSTextField *currencyName;
+- (IBAction)transactionBack:(id)sender;
+@property (weak) IBOutlet NSButton *buyButton;
+@property (weak) IBOutlet NSButton *sellButton;
+
+
+@property (weak) IBOutlet NSTextField *sell;
+
+- (IBAction)buy:(id)sender;
+- (IBAction)sell:(id)sender;
+
 - (IBAction) deleteCurrency:(id)sender;
+
+// Create Alert
+
+
 
 @property (weak) IBOutlet NSButton *accountsB;
 @property (weak) IBOutlet NSButton *shareB;
@@ -50,10 +85,15 @@
 // ADD ACC
 - (IBAction)save:(id)sender;
 @property (weak) IBOutlet NSTextField *addAccTextField;
+- (IBAction)addTransaction:(id)sender;
 
 // INFO
 @property (weak) IBOutlet NSImageView *imageInfo;
 @property (weak) IBOutlet NSTableColumn *column;
+@property (weak) IBOutlet NSTableView *infoTableview;
+@property (weak) IBOutlet NSTextField *profitOrLoss;
+@property (weak) IBOutlet NSTextField *holdings;
+@property (weak) IBOutlet NSTextField *netLoss;
 
 // MORE MENU
 @property (weak) IBOutlet NSView *moreMenu;

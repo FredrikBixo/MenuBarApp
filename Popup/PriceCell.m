@@ -17,11 +17,11 @@
 
 - (IBAction)alertBellPressed:(id)sender {
     
-    
     [[NSNotificationCenter defaultCenter]
      postNotificationName:@"TestNotification"
      object:self];
     NSLog(@"pressed");
+    
 }
 
 

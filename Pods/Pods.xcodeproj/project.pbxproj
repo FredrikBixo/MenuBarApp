@@ -1,0 +1,562 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		09059E3E1509504BCB779C7FD2287BCD /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 270DD1219F1E6CF00379D39F252D87C6 /* Cocoa.framework */; };
+		292FAC270D6F96CBE22234FAE81F7712 /* Pods-Popup-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = C7EC773BD8D3E8118DDBDE3AC3580702 /* Pods-Popup-dummy.m */; };
+		3A6C0B82D883727351BAB50F429124B5 /* Pods-Popup-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 08E2BC0CD4FDF9B18E0C10AD10D23407 /* Pods-Popup-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		5137BD95FE5CEC247C66B817ECD4205B /* FlatButton-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 3140C2EBF369C57847A51F2C86029F1F /* FlatButton-dummy.m */; };
+		6F4DD6CB29FB5C4684E1E1A86E3F3ADA /* FlatButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 965F96A7BE7A3123EACB72CB6B12FD56 /* FlatButton.swift */; };
+		DC1A42B55184AE42554CA0AF30A48599 /* FlatButton-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 0EAAED8DFE37806113163EB4EB782FD9 /* FlatButton-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		E2E829FEB70016035CEC6EA699214516 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 270DD1219F1E6CF00379D39F252D87C6 /* Cocoa.framework */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		D31EE28093586768CBD168FB9D87B446 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = D41D8CD98F00B204E9800998ECF8427E /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 7DE738A422935570A6C0C2A6B4A34D0B;
+			remoteInfo = FlatButton;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		08E2BC0CD4FDF9B18E0C10AD10D23407 /* Pods-Popup-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-Popup-umbrella.h"; sourceTree = "<group>"; };
+		0EAAED8DFE37806113163EB4EB782FD9 /* FlatButton-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "FlatButton-umbrella.h"; sourceTree = "<group>"; };
+		21A7D890C32A18C9310EDCD856DC8FD2 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		270DD1219F1E6CF00379D39F252D87C6 /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.12.sdk/System/Library/Frameworks/Cocoa.framework; sourceTree = DEVELOPER_DIR; };
+		3140C2EBF369C57847A51F2C86029F1F /* FlatButton-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "FlatButton-dummy.m"; sourceTree = "<group>"; };
+		422BF6EEF2570D445D8267D201FE4272 /* FlatButton-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "FlatButton-prefix.pch"; sourceTree = "<group>"; };
+		6F65DF992790D615B2138FBB09D4EF63 /* FlatButton.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; path = FlatButton.modulemap; sourceTree = "<group>"; };
+		79387533E99862B5D5D97C086771877B /* FlatButton.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = FlatButton.xcconfig; sourceTree = "<group>"; };
+		7BB76960CFCC0C74ECA273DEDB4679F7 /* Pods-Popup-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-Popup-acknowledgements.plist"; sourceTree = "<group>"; };
+		93A4A3777CF96A4AAC1D13BA6DCCEA73 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; lastKnownFileType = text; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
+		93FD3526A6EC1BF9E11D5B5C69473D22 /* Pods-Popup.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-Popup.debug.xcconfig"; sourceTree = "<group>"; };
+		9568ED9CC6CA80A704C5F5E5152C3DC8 /* FlatButton.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = FlatButton.framework; path = FlatButton.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		95EFEFAC66CCB3977EB4E930BB8F0213 /* Pods-Popup-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-Popup-frameworks.sh"; sourceTree = "<group>"; };
+		965F96A7BE7A3123EACB72CB6B12FD56 /* FlatButton.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = FlatButton.swift; path = FlatButton/FlatButton.swift; sourceTree = "<group>"; };
+		B23B9B310F4149AD84C77596EA52D549 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		C7EC773BD8D3E8118DDBDE3AC3580702 /* Pods-Popup-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-Popup-dummy.m"; sourceTree = "<group>"; };
+		CA165085FBF9A5DDA6363E733ABEC04C /* Pods-Popup-resources.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-Popup-resources.sh"; sourceTree = "<group>"; };
+		DFD8D79143A9FA67C9A3C843705131C5 /* Pods-Popup-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-Popup-acknowledgements.markdown"; sourceTree = "<group>"; };
+		E79335A3B18B90E9460398556182D942 /* Pods_Popup.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Pods_Popup.framework; path = "Pods-Popup.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
+		ED39CA3EA4AE1111CC1508133B982B4D /* Pods-Popup.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-Popup.release.xcconfig"; sourceTree = "<group>"; };
+		FB3023B3224AE385EE73B233AB58FB8C /* Pods-Popup.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; path = "Pods-Popup.modulemap"; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		51D4DB358CE3F182DB333611FA3DB5E6 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E2E829FEB70016035CEC6EA699214516 /* Cocoa.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		D431CAF98298A3B9B5A8D5785ED90D93 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				09059E3E1509504BCB779C7FD2287BCD /* Cocoa.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		04C068A18C5413F804A2959126093416 /* OS X */ = {
+			isa = PBXGroup;
+			children = (
+				270DD1219F1E6CF00379D39F252D87C6 /* Cocoa.framework */,
+			);
+			name = "OS X";
+			sourceTree = "<group>";
+		};
+		12675C4F6B16BCA007C769AE907C175B /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				9568ED9CC6CA80A704C5F5E5152C3DC8 /* FlatButton.framework */,
+				E79335A3B18B90E9460398556182D942 /* Pods_Popup.framework */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		39E9EE8210D861DFD82346C1F5EB7218 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				04C068A18C5413F804A2959126093416 /* OS X */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		52CF66DAD695FC746856054482D98706 /* Targets Support Files */ = {
+			isa = PBXGroup;
+			children = (
+				EF6B1238477B2F489125B528F9E05139 /* Pods-Popup */,
+			);
+			name = "Targets Support Files";
+			sourceTree = "<group>";
+		};
+		7DB346D0F39D3F0E887471402A8071AB = {
+			isa = PBXGroup;
+			children = (
+				93A4A3777CF96A4AAC1D13BA6DCCEA73 /* Podfile */,
+				39E9EE8210D861DFD82346C1F5EB7218 /* Frameworks */,
+				91C67D7BC8089E47A3557BE508270D10 /* Pods */,
+				12675C4F6B16BCA007C769AE907C175B /* Products */,
+				52CF66DAD695FC746856054482D98706 /* Targets Support Files */,
+			);
+			sourceTree = "<group>";
+		};
+		91C67D7BC8089E47A3557BE508270D10 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				A0623DA2971EC7F1CBF874D89AB0042C /* FlatButton */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		91C75BB3B293D3075081E66525E55ABB /* Support Files */ = {
+			isa = PBXGroup;
+			children = (
+				6F65DF992790D615B2138FBB09D4EF63 /* FlatButton.modulemap */,
+				79387533E99862B5D5D97C086771877B /* FlatButton.xcconfig */,
+				3140C2EBF369C57847A51F2C86029F1F /* FlatButton-dummy.m */,
+				422BF6EEF2570D445D8267D201FE4272 /* FlatButton-prefix.pch */,
+				0EAAED8DFE37806113163EB4EB782FD9 /* FlatButton-umbrella.h */,
+				21A7D890C32A18C9310EDCD856DC8FD2 /* Info.plist */,
+			);
+			name = "Support Files";
+			path = "../Target Support Files/FlatButton";
+			sourceTree = "<group>";
+		};
+		A0623DA2971EC7F1CBF874D89AB0042C /* FlatButton */ = {
+			isa = PBXGroup;
+			children = (
+				965F96A7BE7A3123EACB72CB6B12FD56 /* FlatButton.swift */,
+				91C75BB3B293D3075081E66525E55ABB /* Support Files */,
+			);
+			name = FlatButton;
+			path = FlatButton;
+			sourceTree = "<group>";
+		};
+		EF6B1238477B2F489125B528F9E05139 /* Pods-Popup */ = {
+			isa = PBXGroup;
+			children = (
+				B23B9B310F4149AD84C77596EA52D549 /* Info.plist */,
+				FB3023B3224AE385EE73B233AB58FB8C /* Pods-Popup.modulemap */,
+				DFD8D79143A9FA67C9A3C843705131C5 /* Pods-Popup-acknowledgements.markdown */,
+				7BB76960CFCC0C74ECA273DEDB4679F7 /* Pods-Popup-acknowledgements.plist */,
+				C7EC773BD8D3E8118DDBDE3AC3580702 /* Pods-Popup-dummy.m */,
+				95EFEFAC66CCB3977EB4E930BB8F0213 /* Pods-Popup-frameworks.sh */,
+				CA165085FBF9A5DDA6363E733ABEC04C /* Pods-Popup-resources.sh */,
+				08E2BC0CD4FDF9B18E0C10AD10D23407 /* Pods-Popup-umbrella.h */,
+				93FD3526A6EC1BF9E11D5B5C69473D22 /* Pods-Popup.debug.xcconfig */,
+				ED39CA3EA4AE1111CC1508133B982B4D /* Pods-Popup.release.xcconfig */,
+			);
+			name = "Pods-Popup";
+			path = "Target Support Files/Pods-Popup";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXHeadersBuildPhase section */
+		419780D314D6CAEACF29E68653D1FE86 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				3A6C0B82D883727351BAB50F429124B5 /* Pods-Popup-umbrella.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		D0A8D95D67700053277FAD26916E4A6C /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				DC1A42B55184AE42554CA0AF30A48599 /* FlatButton-umbrella.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXHeadersBuildPhase section */
+
+/* Begin PBXNativeTarget section */
+		7DE738A422935570A6C0C2A6B4A34D0B /* FlatButton */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 8EE42744BC6E5AD1375A9EFBED0B26E9 /* Build configuration list for PBXNativeTarget "FlatButton" */;
+			buildPhases = (
+				43CB93E5CD75FB95F9A2B38E75CB844E /* Sources */,
+				51D4DB358CE3F182DB333611FA3DB5E6 /* Frameworks */,
+				D0A8D95D67700053277FAD26916E4A6C /* Headers */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = FlatButton;
+			productName = FlatButton;
+			productReference = 9568ED9CC6CA80A704C5F5E5152C3DC8 /* FlatButton.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+		FF98066885C7877AC367C99BF394A71B /* Pods-Popup */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 9974D485ECC0EECA5244FCCBF3D9E4C1 /* Build configuration list for PBXNativeTarget "Pods-Popup" */;
+			buildPhases = (
+				89963F183785E321A94FF0858DF10387 /* Sources */,
+				D431CAF98298A3B9B5A8D5785ED90D93 /* Frameworks */,
+				419780D314D6CAEACF29E68653D1FE86 /* Headers */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				3CC12B62CF4F6ACD20F42E21AB4B4B0C /* PBXTargetDependency */,
+			);
+			name = "Pods-Popup";
+			productName = "Pods-Popup";
+			productReference = E79335A3B18B90E9460398556182D942 /* Pods_Popup.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		D41D8CD98F00B204E9800998ECF8427E /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 0830;
+				LastUpgradeCheck = 0700;
+			};
+			buildConfigurationList = 2D8E8EC45A3A1A1D94AE762CB5028504 /* Build configuration list for PBXProject "Pods" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = 7DB346D0F39D3F0E887471402A8071AB;
+			productRefGroup = 12675C4F6B16BCA007C769AE907C175B /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				7DE738A422935570A6C0C2A6B4A34D0B /* FlatButton */,
+				FF98066885C7877AC367C99BF394A71B /* Pods-Popup */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXSourcesBuildPhase section */
+		43CB93E5CD75FB95F9A2B38E75CB844E /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				5137BD95FE5CEC247C66B817ECD4205B /* FlatButton-dummy.m in Sources */,
+				6F4DD6CB29FB5C4684E1E1A86E3F3ADA /* FlatButton.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		89963F183785E321A94FF0858DF10387 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				292FAC270D6F96CBE22234FAE81F7712 /* Pods-Popup-dummy.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		3CC12B62CF4F6ACD20F42E21AB4B4B0C /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = FlatButton;
+			target = 7DE738A422935570A6C0C2A6B4A34D0B /* FlatButton */;
+			targetProxy = D31EE28093586768CBD168FB9D87B446 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		466E833B202FF13B4B71BCC3C1155FA0 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 93FD3526A6EC1BF9E11D5B5C69473D22 /* Pods-Popup.debug.xcconfig */;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				COMBINE_HIDPI_IMAGES = YES;
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				FRAMEWORK_VERSION = A;
+				INFOPLIST_FILE = "Target Support Files/Pods-Popup/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/Frameworks";
+				MACH_O_TYPE = staticlib;
+				MACOSX_DEPLOYMENT_TARGET = 10.13;
+				MODULEMAP_FILE = "Target Support Files/Pods-Popup/Pods-Popup.modulemap";
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = Pods_Popup;
+				SDKROOT = macosx;
+				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		63EEB44146294ABE68D2DC446AB32D02 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 79387533E99862B5D5D97C086771877B /* FlatButton.xcconfig */;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				COMBINE_HIDPI_IMAGES = YES;
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				FRAMEWORK_VERSION = A;
+				GCC_PREFIX_HEADER = "Target Support Files/FlatButton/FlatButton-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/FlatButton/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/Frameworks";
+				MACOSX_DEPLOYMENT_TARGET = 10.9;
+				MODULEMAP_FILE = "Target Support Files/FlatButton/FlatButton.modulemap";
+				PRODUCT_NAME = FlatButton;
+				SDKROOT = macosx;
+				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+				SWIFT_VERSION = 3.0;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		AB6AE744FBD3C1DC631448DFC8F1C7DA /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = ED39CA3EA4AE1111CC1508133B982B4D /* Pods-Popup.release.xcconfig */;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				COMBINE_HIDPI_IMAGES = YES;
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				FRAMEWORK_VERSION = A;
+				INFOPLIST_FILE = "Target Support Files/Pods-Popup/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/Frameworks";
+				MACH_O_TYPE = staticlib;
+				MACOSX_DEPLOYMENT_TARGET = 10.13;
+				MODULEMAP_FILE = "Target Support Files/Pods-Popup/Pods-Popup.modulemap";
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = Pods_Popup;
+				SDKROOT = macosx;
+				SKIP_INSTALL = YES;
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		C4D8B0A6AD4EF0183B7B90C84630289B /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGNING_REQUIRED = NO;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"POD_CONFIGURATION_RELEASE=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.13;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = NO_SIGNING/;
+				STRIP_INSTALLED_PRODUCT = NO;
+				SYMROOT = "${SRCROOT}/../build";
+			};
+			name = Release;
+		};
+		D34AFC320E7BAB48EF90007021626CF0 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 79387533E99862B5D5D97C086771877B /* FlatButton.xcconfig */;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				COMBINE_HIDPI_IMAGES = YES;
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				FRAMEWORK_VERSION = A;
+				GCC_PREFIX_HEADER = "Target Support Files/FlatButton/FlatButton-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/FlatButton/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/Frameworks";
+				MACOSX_DEPLOYMENT_TARGET = 10.9;
+				MODULEMAP_FILE = "Target Support Files/FlatButton/FlatButton.modulemap";
+				PRODUCT_NAME = FlatButton;
+				SDKROOT = macosx;
+				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 3.0;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		ED3BC417A9BAAB2DFA8DA863F8CA89C0 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGNING_REQUIRED = NO;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"POD_CONFIGURATION_DEBUG=1",
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.13;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = NO_SIGNING/;
+				STRIP_INSTALLED_PRODUCT = NO;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SYMROOT = "${SRCROOT}/../build";
+			};
+			name = Debug;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		2D8E8EC45A3A1A1D94AE762CB5028504 /* Build configuration list for PBXProject "Pods" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				ED3BC417A9BAAB2DFA8DA863F8CA89C0 /* Debug */,
+				C4D8B0A6AD4EF0183B7B90C84630289B /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		8EE42744BC6E5AD1375A9EFBED0B26E9 /* Build configuration list for PBXNativeTarget "FlatButton" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				D34AFC320E7BAB48EF90007021626CF0 /* Debug */,
+				63EEB44146294ABE68D2DC446AB32D02 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		9974D485ECC0EECA5244FCCBF3D9E4C1 /* Build configuration list for PBXNativeTarget "Pods-Popup" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				466E833B202FF13B4B71BCC3C1155FA0 /* Debug */,
+				AB6AE744FBD3C1DC631448DFC8F1C7DA /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = D41D8CD98F00B204E9800998ECF8427E /* Project object */;
+}
