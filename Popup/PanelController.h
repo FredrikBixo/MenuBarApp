@@ -13,7 +13,7 @@
 
 #pragma mark -
 
-@interface PanelController : NSWindowController <NSWindowDelegate, NSTableViewDelegate, NSTableViewDataSource,NSTextFieldDelegate, NSGestureRecognizerDelegate>
+@interface PanelController : NSWindowController <NSWindowDelegate, NSTableViewDelegate, NSTableViewDataSource,NSTextFieldDelegate, NSGestureRecognizerDelegate, NSSharingServiceDelegate>
 {
     
     BOOL _hasActivePanel;
@@ -31,6 +31,10 @@
     
     BOOL sell;
     BOOL repeat;
+    BOOL remove;
+    
+    NSInteger clickedRow2;
+    NSString *currentAcc;
     
     NSString *selectedCurrency;
     
@@ -44,6 +48,12 @@
     NSMutableDictionary *allcoins;
     
 }
+
+@property (weak) IBOutlet NSTextField *coin;
+@property (weak) IBOutlet NSTextField *holdingsText;
+
+@property (weak) IBOutlet NSTextField *price;
+
 
 // Create Alert
 
@@ -65,6 +75,7 @@
 - (IBAction)transactionBack:(id)sender;
 @property (weak) IBOutlet NSButton *buyButton;
 @property (weak) IBOutlet NSButton *sellButton;
+- (IBAction)deleteTransaction:(id)sender;
 
 
 @property (weak) IBOutlet NSTextField *sell;

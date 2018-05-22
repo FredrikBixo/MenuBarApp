@@ -34,6 +34,7 @@
 		EFAC44762097626D00CA286E /* TransactionCell.m in Sources */ = {isa = PBXBuildFile; fileRef = EFAC44752097626D00CA286E /* TransactionCell.m */; };
 		EFAC44772097629400CA286E /* TransactionCell.h in Resources */ = {isa = PBXBuildFile; fileRef = EFAC44742097626D00CA286E /* TransactionCell.h */; };
 		EFAC44782097629400CA286E /* TransactionCell.m in Resources */ = {isa = PBXBuildFile; fileRef = EFAC44752097626D00CA286E /* TransactionCell.m */; };
+		EFC199E12099FD190086FF61 /* VerticallyCenteredTextFieldCell.m in Sources */ = {isa = PBXBuildFile; fileRef = EFC199DF2099FD190086FF61 /* VerticallyCenteredTextFieldCell.m */; };
 		EFE1205920194BD600878450 /* CustomVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFE1205820194BD600878450 /* CustomVC.swift */; };
 		EFE1205E20194D2900878450 /* CustomVC2.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFE1205D20194D2900878450 /* CustomVC2.swift */; };
 		EFE1206120194DC200878450 /* CustomVC3.m in Sources */ = {isa = PBXBuildFile; fileRef = EFE1206020194DC200878450 /* CustomVC3.m */; };
@@ -88,6 +89,8 @@
 		EF77FD1720167A2B009C1B78 /* Media.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Media.xcassets; sourceTree = "<group>"; };
 		EFAC44742097626D00CA286E /* TransactionCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TransactionCell.h; sourceTree = "<group>"; };
 		EFAC44752097626D00CA286E /* TransactionCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TransactionCell.m; sourceTree = "<group>"; };
+		EFC199DF2099FD190086FF61 /* VerticallyCenteredTextFieldCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = VerticallyCenteredTextFieldCell.m; path = "New Group/VerticallyCenteredTextFieldCell.m"; sourceTree = "<group>"; };
+		EFC199E02099FD190086FF61 /* VerticallyCenteredTextFieldCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = VerticallyCenteredTextFieldCell.h; path = "New Group/VerticallyCenteredTextFieldCell.h"; sourceTree = "<group>"; };
 		EFE1205820194BD600878450 /* CustomVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomVC.swift; sourceTree = "<group>"; };
 		EFE1205D20194D2900878450 /* CustomVC2.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomVC2.swift; sourceTree = "<group>"; };
 		EFE1205F20194DC200878450 /* CustomVC3.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CustomVC3.h; sourceTree = "<group>"; };
@@ -195,6 +198,7 @@
 			children = (
 				DD4F7C4013C31B4A00825C6E /* Panel.xib */,
 				DD4F7C1D13C30F9F00825C6E /* MainMenu.xib */,
+				EFC199E22099FD1D0086FF61 /* CustomViews */,
 				EFAC44742097626D00CA286E /* TransactionCell.h */,
 				EFAC44752097626D00CA286E /* TransactionCell.m */,
 				EF185162203B719E007B7208 /* SearchCell.h */,
@@ -260,6 +264,15 @@
 				EF301F9B20156989001841FB /* MyHeaderCell.h */,
 			);
 			name = MenuBarCode;
+			sourceTree = "<group>";
+		};
+		EFC199E22099FD1D0086FF61 /* CustomViews */ = {
+			isa = PBXGroup;
+			children = (
+				EFC199E02099FD190086FF61 /* VerticallyCenteredTextFieldCell.h */,
+				EFC199DF2099FD190086FF61 /* VerticallyCenteredTextFieldCell.m */,
+			);
+			name = CustomViews;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -399,6 +412,7 @@
 				EF185163203B719E007B7208 /* SearchCell.m in Sources */,
 				EFE1205E20194D2900878450 /* CustomVC2.swift in Sources */,
 				DD4F7C1513C30F9F00825C6E /* main.m in Sources */,
+				EFC199E12099FD190086FF61 /* VerticallyCenteredTextFieldCell.m in Sources */,
 				EF1DCE0B201907E200E84F1F /* CurrencyCell.m in Sources */,
 				DD4F7C1C13C30F9F00825C6E /* ApplicationDelegate.m in Sources */,
 				EF234E892020E14E0043C767 /* CustomSearchField.swift in Sources */,
@@ -525,6 +539,7 @@
 				GCC_PREFIX_HEADER = "Popup/Popup-Prefix.pch";
 				INFOPLIST_FILE = "Popup/Popup-Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
+				MACOSX_DEPLOYMENT_TARGET = 10.12;
 				PRODUCT_BUNDLE_IDENTIFIER = com.shpakovski.mac.popup;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OBJC_BRIDGING_HEADER = "Popup/Popup-Bridging-Header.h";
@@ -545,6 +560,7 @@
 				GCC_PREFIX_HEADER = "Popup/Popup-Prefix.pch";
 				INFOPLIST_FILE = "Popup/Popup-Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
+				MACOSX_DEPLOYMENT_TARGET = 10.12;
 				PRODUCT_BUNDLE_IDENTIFIER = com.shpakovski.mac.popup;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OBJC_BRIDGING_HEADER = "Popup/Popup-Bridging-Header.h";
