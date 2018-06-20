@@ -61,14 +61,19 @@
 
 -(void)controlTextDidChange:(NSNotification *)obj {
     
+    if (self.searchTextField2.stringValue.length >= 2) {
     
+    NSPredicate *bPredicate = [NSPredicate predicateWithFormat:@"SELF BEGINSWITH[c] %@",self.searchTextField2.stringValue];
+    NSSortDescriptor *sort = [NSSortDescriptor sortDescriptorWithKey:@"name" ascending:YES];
+
+    filteredArray =  [[NSMutableArray alloc]initWithArray:[[currenciesNames filteredArrayUsingPredicate:bPredicate] sortedArrayUsingSelector:@selector(localizedCaseInsensitiveCompare:)]];
     
-    NSPredicate *bPredicate = [NSPredicate predicateWithFormat:@"SELF contains[c] %@",self.searchTextField2.stringValue];
-    filteredArray = [currenciesNames filteredArrayUsingPredicate:bPredicate];
     NSLog(@"HERE %@",filteredArray);
     
     
     [self.searchTableView reloadData];
+        
+    }
     
 }
 
@@ -157,6 +162,8 @@
                 
                 for (NSDictionary *alertPrice in alerts) {
                     if (price > [alertPrice[@"price"] doubleValue] && [alertPrice[@"type"] isEqualToString:@"Over"]) {
+                        
+                        // Show alert
                         NSAlert *alert = [[NSAlert alloc] init];
                         [alert addButtonWithTitle:@"OK"];
                         // [alert addButtonWithTitle:@"Cancel"];
@@ -166,6 +173,8 @@
                         [alert runModal];
                         
                         if ([alertPrice[@"repeat"] isEqualToString:@"NO"]) {
+                            
+                            // save alerts
                             [alerts removeObject:alertPrice];
                             [[NSUserDefaults standardUserDefaults] setValue:[NSKeyedArchiver archivedDataWithRootObject:alerts] forKey: [NSString stringWithFormat:@"%@_%@",string,currentAcc]];
                         }
@@ -173,6 +182,8 @@
                     }
                     
                     if (price < [alertPrice[@"price"] doubleValue] && [alertPrice[@"type"] isEqualToString:@"Under"]) {
+                        
+                        // Show alert
                         NSAlert *alert = [[NSAlert alloc] init];
                         [alert addButtonWithTitle:@"OK"];
                         // [alert addButtonWithTitle:@"Cancel"];
@@ -182,6 +193,7 @@
                         [alert runModal];
                         
                         if ([alertPrice[@"repeat"] isEqualToString:@"NO"]) {
+                            // save alerts
                             [alerts removeObject:alertPrice];
                             [[NSUserDefaults standardUserDefaults] setValue:[NSKeyedArchiver archivedDataWithRootObject:alerts] forKey: [NSString stringWithFormat:@"%@_%@",string,currentAcc]];
                         }
@@ -199,9 +211,21 @@
             
             self.plusToday.stringValue = [NSString stringWithFormat:@"+$%.2f",[[self.balance.stringValue stringByReplacingOccurrencesOfString:@"$" withString:@""] doubleValue]-avg];
                 
-            } else {
+            } else if (avg < 0) {
+                
+                if ([[self.balance.stringValue stringByReplacingOccurrencesOfString:@"$" withString:@""] doubleValue]) {
                 
                 self.plusToday.stringValue = [NSString stringWithFormat:@"-$%.2f",fabs([[self.balance.stringValue stringByReplacingOccurrencesOfString:@"$" withString:@""] doubleValue]-avg)];
+                    
+                }
+            
+            } else {
+                
+                if ([[self.balance.stringValue stringByReplacingOccurrencesOfString:@"$" withString:@""] doubleValue]) {
+                    
+                    self.plusToday.stringValue = [NSString stringWithFormat:@"$%.2f",fabs([[self.balance.stringValue stringByReplacingOccurrencesOfString:@"$" withString:@""] doubleValue]-avg)];
+                    
+                }
                 
             }
             
@@ -218,10 +242,10 @@
 
 -(void)setup {
     
-  //   NSString *appDomain = [[NSBundle mainBundle] bundleIdentifier];
-  // [[NSUserDefaults standardUserDefaults] removePersistentDomainForName:appDomain];
+     NSString *appDomain = [[NSBundle mainBundle] bundleIdentifier];
+   [[NSUserDefaults standardUserDefaults] removePersistentDomainForName:appDomain];
     
-    NSSharingService * service = [NSSharingService sharingServiceNamed:NSSharingServiceNamePostOnTwitter];
+    NSSharingService *service = [NSSharingService sharingServiceNamed:NSSharingServiceNamePostOnTwitter];
 //    [myShareOnTwitterButton setTitle:service.title];
 //    [myShareOnTwitterButton setEnabled:[service canPerformWithItems:nil]];
     
@@ -419,6 +443,13 @@
                                                                       attributes: blueDict3];
     
     [self.sell setPlaceholderAttributedString:blueString2];
+    
+    NSDictionary *blueDict4 = [NSDictionary dictionaryWithObject: [NSColor darkGrayColor]
+                                                          forKey: NSForegroundColorAttributeName];
+    NSAttributedString *blueString4 = [[NSAttributedString alloc] initWithString: @"Search coins"
+                                                                      attributes: blueDict4];
+    
+    [self.searchTextField2 setPlaceholderAttributedString:blueString4];
 
     
 }
@@ -1449,8 +1480,11 @@
         if (avg > 0) {
             self.profitOrLoss.stringValue = [NSString stringWithFormat:@"+$%.2f",avg];
             self.profitOrLoss.textColor = [NSColor greenColor];
-        } else {
+        } else if (avg < 0) {
             self.profitOrLoss.stringValue =  [NSString stringWithFormat:@"-$%.2f",fabs(avg)];
+            self.profitOrLoss.textColor = [NSColor redColor];
+        } else {
+            self.profitOrLoss.stringValue =  [NSString stringWithFormat:@"$%.2f",fabs(avg)];
             self.profitOrLoss.textColor = [NSColor redColor];
         }
     } else {

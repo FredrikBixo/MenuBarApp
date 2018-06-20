@@ -177,7 +177,7 @@ AAAAAAEGA
                                 <size key="intercellSpacing" width="3" height="3"/>
                                 <color key="backgroundColor" white="1" alpha="0.0" colorSpace="deviceWhite"/>
                                 <tableViewGridLines key="gridStyleMask" horizontal="YES"/>
-                                <color key="gridColor" red="0.38161705820000003" green="0.43554792469999998" blue="0.6510079339" alpha="0.61966329229999995" colorSpace="custom" customColorSpace="displayP3"/>
+                                <color key="gridColor" red="0.13725490196078433" green="0.16470588235294117" blue="0.20392156862745098" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <tableColumns>
                                     <tableColumn identifier="Coin" width="117" minWidth="40" maxWidth="1000" id="B5p-HF-zQD">
                                         <tableHeaderCell key="headerCell" lineBreakMode="truncatingTail" borderStyle="border" title="Coin">
@@ -359,8 +359,8 @@ AAAAAAEGA
                     </textFieldCell>
                 </textField>
                 <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="4zI-Jh-Tlc">
-                    <rect key="frame" x="169" y="494" width="74" height="24"/>
-                    <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" alignment="center" title="+$876.03" id="OUV-QO-8vp">
+                    <rect key="frame" x="182" y="494" width="48" height="24"/>
+                    <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" alignment="center" title="+$0.0" id="OUV-QO-8vp">
                         <font key="font" size="16" name="SanFranciscoText-Light"/>
                         <color key="textColor" name="systemGreenColor" catalog="System" colorSpace="catalog"/>
                         <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
@@ -458,7 +458,7 @@ AAAAAAEGA
                         <constraint firstAttribute="height" constant="44" id="SID-Yr-5GI"/>
                         <constraint firstAttribute="width" constant="400" id="xdd-xU-rlQ"/>
                     </constraints>
-                    <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" alignment="center" title="$24.300" id="IBT-Sn-0eg">
+                    <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" alignment="center" title="$0.0" id="IBT-Sn-0eg">
                         <font key="font" size="34" name="SanFranciscoText-Light"/>
                         <color key="textColor" red="0.99509803919999995" green="0.99019607840000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                         <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
@@ -634,15 +634,6 @@ AAAAAAEGA
             <rect key="frame" x="0.0" y="0.0" width="412" height="637"/>
             <autoresizingMask key="autoresizingMask"/>
             <subviews>
-                <textField hidden="YES" verticalHuggingPriority="750" horizontalCompressionResistancePriority="250" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="wig-tp-ThO">
-                    <rect key="frame" x="17" y="20" width="378" height="0.0"/>
-                    <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                    <textFieldCell key="cell" sendsActionOnEndEditing="YES" alignment="center" id="Sb0-1n-tSJ">
-                        <font key="font" metaFont="smallSystem"/>
-                        <color key="textColor" name="disabledControlTextColor" catalog="System" colorSpace="catalog"/>
-                        <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
-                    </textFieldCell>
-                </textField>
                 <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="DVN-E2-PlV">
                     <rect key="frame" x="18" y="587" width="30" height="30"/>
                     <constraints>
@@ -658,13 +649,13 @@ AAAAAAEGA
                     </connections>
                 </button>
                 <scrollView borderType="none" autohidesScrollers="YES" horizontalLineScroll="81" horizontalPageScroll="10" verticalLineScroll="81" verticalPageScroll="10" usesPredominantAxisScrolling="NO" translatesAutoresizingMaskIntoConstraints="NO" id="IxS-ya-PZ8">
-                    <rect key="frame" x="0.0" y="45" width="412" height="442"/>
+                    <rect key="frame" x="0.0" y="45" width="412" height="402"/>
                     <clipView key="contentView" drawsBackground="NO" id="Yid-55-NdG">
-                        <rect key="frame" x="0.0" y="0.0" width="412" height="442"/>
+                        <rect key="frame" x="0.0" y="0.0" width="412" height="402"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView verticalHuggingPriority="750" allowsExpansionToolTips="YES" columnAutoresizingStyle="lastColumnOnly" multipleSelection="NO" emptySelection="NO" autosaveColumns="NO" typeSelect="NO" rowHeight="79" viewBased="YES" id="f4S-DK-l7n">
-                                <rect key="frame" x="0.0" y="0.0" width="412" height="442"/>
+                                <rect key="frame" x="0.0" y="0.0" width="412" height="402"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <size key="intercellSpacing" width="3" height="2"/>
                                 <color key="backgroundColor" white="1" alpha="0.0" colorSpace="deviceWhite"/>
@@ -732,7 +723,7 @@ AAAAAAEGA
                     </scroller>
                 </scrollView>
                 <imageView horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="FMG-tk-Fch">
-                    <rect key="frame" x="30" y="512" width="352" height="40"/>
+                    <rect key="frame" x="30" y="472" width="352" height="40"/>
                     <constraints>
                         <constraint firstAttribute="width" constant="352" id="coC-Dw-O4D"/>
                         <constraint firstAttribute="height" constant="40" id="rZ6-XA-zUM"/>
@@ -740,28 +731,38 @@ AAAAAAEGA
                     <imageCell key="cell" refusesFirstResponder="YES" alignment="left" imageScaling="proportionallyDown" image="Rectangle 9" id="VQW-xm-Ju9"/>
                 </imageView>
                 <textField focusRingType="none" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="txC-E1-hYc">
-                    <rect key="frame" x="34" y="513" width="344" height="38"/>
+                    <rect key="frame" x="34" y="473" width="344" height="38"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="38" id="3hx-QO-sDY"/>
                         <constraint firstAttribute="width" constant="340" id="DhZ-od-DRQ"/>
                     </constraints>
-                    <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" sendsActionOnEndEditing="YES" state="on" focusRingType="none" id="QyN-Ol-GgP" customClass="VerticallyCenteredTextFieldCell">
+                    <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" sendsActionOnEndEditing="YES" state="on" focusRingType="none" placeholderString="Search coins" id="QyN-Ol-GgP" customClass="VerticallyCenteredTextFieldCell">
                         <font key="font" metaFont="system" size="20"/>
                         <color key="textColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <color key="backgroundColor" red="0.13749629259109497" green="0.16398569941520691" blue="0.2039276659488678" alpha="0.0" colorSpace="custom" customColorSpace="displayP3"/>
                     </textFieldCell>
                 </textField>
+                <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="LnH-gp-9wD">
+                    <rect key="frame" x="143" y="539" width="126" height="38"/>
+                    <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" alignment="center" title="Add Coins" id="GdZ-bd-qa2">
+                        <font key="font" size="26" name="SanFranciscoText-Light"/>
+                        <color key="textColor" red="0.50866256480000005" green="0.50866256480000005" blue="0.50866256480000005" alpha="0.84999999999999998" colorSpace="custom" customColorSpace="displayP3"/>
+                        <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                    </textFieldCell>
+                </textField>
             </subviews>
             <constraints>
-                <constraint firstItem="txC-E1-hYc" firstAttribute="top" secondItem="Mfv-v3-L0w" secondAttribute="top" constant="86" id="20L-iB-KbP"/>
                 <constraint firstItem="IxS-ya-PZ8" firstAttribute="leading" secondItem="Mfv-v3-L0w" secondAttribute="leading" id="Cvv-Hx-mrE"/>
                 <constraint firstItem="txC-E1-hYc" firstAttribute="centerY" secondItem="FMG-tk-Fch" secondAttribute="centerY" id="JLa-GG-J6C"/>
+                <constraint firstItem="LnH-gp-9wD" firstAttribute="centerX" secondItem="Mfv-v3-L0w" secondAttribute="centerX" id="QG1-3d-AAp"/>
                 <constraint firstItem="FMG-tk-Fch" firstAttribute="centerX" secondItem="Mfv-v3-L0w" secondAttribute="centerX" id="Rh1-or-W1H"/>
                 <constraint firstItem="DVN-E2-PlV" firstAttribute="top" secondItem="Mfv-v3-L0w" secondAttribute="top" constant="20" id="S7I-iP-ERJ"/>
                 <constraint firstItem="DVN-E2-PlV" firstAttribute="leading" secondItem="Mfv-v3-L0w" secondAttribute="leading" constant="18" id="Uf2-Nu-Np5"/>
                 <constraint firstAttribute="bottom" secondItem="IxS-ya-PZ8" secondAttribute="bottom" constant="45" id="VFs-a5-vs7"/>
+                <constraint firstItem="txC-E1-hYc" firstAttribute="top" secondItem="LnH-gp-9wD" secondAttribute="bottom" constant="28" id="aq5-b0-wax"/>
                 <constraint firstItem="txC-E1-hYc" firstAttribute="centerX" secondItem="FMG-tk-Fch" secondAttribute="centerX" id="jBX-Qk-ZsP"/>
-                <constraint firstItem="IxS-ya-PZ8" firstAttribute="top" secondItem="Mfv-v3-L0w" secondAttribute="top" constant="150" id="ulR-x1-qNN"/>
+                <constraint firstItem="LnH-gp-9wD" firstAttribute="top" secondItem="Mfv-v3-L0w" secondAttribute="top" constant="60" id="l81-Hv-8i0"/>
+                <constraint firstItem="IxS-ya-PZ8" firstAttribute="top" secondItem="txC-E1-hYc" secondAttribute="bottom" constant="26" id="vXD-4l-AI7"/>
                 <constraint firstAttribute="trailing" secondItem="IxS-ya-PZ8" secondAttribute="trailing" id="yU5-9D-goM"/>
             </constraints>
             <animations>
@@ -777,7 +778,7 @@ AAAAAAEGA
 </mutableData>
                 </caTransition>
             </animations>
-            <point key="canvasLocation" x="669" y="931"/>
+            <point key="canvasLocation" x="669" y="930.5"/>
         </view>
         <view wantsLayer="YES" id="nGe-Fu-1wt">
             <rect key="frame" x="0.0" y="0.0" width="412" height="637"/>
