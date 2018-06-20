@@ -251,7 +251,7 @@
 //    [myShareOnTwitterButton setEnabled:[service canPerformWithItems:nil]];
     
     [self.window.contentView addSubview:self.mainView];
-    [self.window.contentView addSubview:self.donareView];
+    [self.window.contentView addSubview:self.donateView];
     [self.window.contentView addSubview:self.infoView];
     [self.window.contentView addSubview:self.searchView];
     [self.window.contentView addSubview:self.alertView];
@@ -259,7 +259,7 @@
     [self.window.contentView addSubview:self.settingsView];
     [self.window.contentView addSubview:self.addAccountView];
     [self.window.contentView addSubview:self.addTransactionView];
-    self.donareView.alphaValue = 0;
+    self.donateView.alphaValue = 0;
     self.searchView.alphaValue = 0;
     self.accountsView.alphaValue = 0;
     self.settingsView.alphaValue = 0;
@@ -267,7 +267,7 @@
     self.infoView.alphaValue = 0;
     self.alertView.alphaValue = 0;
     self.addTransactionView.alphaValue = 0;
-    self.donareView.hidden = true;
+    self.donateView.hidden = true;
     self.searchView.hidden = true;
     self.infoView.hidden = true;
     self.alertView.hidden = true;
@@ -626,11 +626,11 @@
     [NSAnimationContext runAnimationGroup:^(NSAnimationContext *context) {
         context.duration = 0.4;
         self.mainView.animator.alphaValue = 0;
-        self.donareView.animator.alphaValue = 1;
+        self.donateView.animator.alphaValue = 1;
     }
                         completionHandler:^{
                             self.mainView.hidden = true;
-                            self.donareView.hidden = false;
+                            self.donateView.hidden = false;
                         }];
     
 
@@ -1210,10 +1210,10 @@
     [NSAnimationContext runAnimationGroup:^(NSAnimationContext *context) {
         context.duration = 0.4;
         self.mainView.animator.alphaValue = 1;
-        self.donareView.animator.alphaValue = 0;
+        self.donateView.animator.alphaValue = 0;
     }
                         completionHandler:^{
-                             self.donareView.hidden = true;
+                             self.donateView.hidden = true;
                             self.mainView.hidden = false;
                         }];
     

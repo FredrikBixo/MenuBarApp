@@ -116,7 +116,7 @@
 - (IBAction)share:(id)sender;
 - (IBAction)settings:(id)sender;
 
-@property (strong) IBOutlet NSView *donareView;
+@property (strong) IBOutlet NSView *donateView;
 @property (strong) IBOutlet NSView *searchView;
 @property (strong) IBOutlet NSView *infoView;
 @property (strong) IBOutlet NSView *mainView;
