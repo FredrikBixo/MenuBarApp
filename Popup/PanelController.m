@@ -178,7 +178,7 @@
                             [alerts removeObject:alertPrice];
                             [[NSUserDefaults standardUserDefaults] setValue:[NSKeyedArchiver archivedDataWithRootObject:alerts] forKey: [NSString stringWithFormat:@"%@_%@",string,currentAcc]];
                         }
-                        
+                        break;
                     }
                     
                     if (price < [alertPrice[@"price"] doubleValue] && [alertPrice[@"type"] isEqualToString:@"Under"]) {
@@ -197,8 +197,9 @@
                             [alerts removeObject:alertPrice];
                             [[NSUserDefaults standardUserDefaults] setValue:[NSKeyedArchiver archivedDataWithRootObject:alerts] forKey: [NSString stringWithFormat:@"%@_%@",string,currentAcc]];
                         }
-                        
+                       break;
                     }
+                    
                     
                     
                 }
@@ -1623,6 +1624,15 @@
     
     [[NSUserDefaults standardUserDefaults] setValue:[NSKeyedArchiver archivedDataWithRootObject:alerts] forKey: [NSString stringWithFormat:@"%@_%@",string,currentAcc]];
     
+    [NSAnimationContext runAnimationGroup:^(NSAnimationContext *context) {
+        context.duration = 0.4;
+        self.alertView.animator.alphaValue = 0;
+        self.mainView.animator.alphaValue = 1;
+    }
+                        completionHandler:^{
+                            self.alertView.hidden = YES;
+                            self.mainView.hidden = NO;
+                        }];
 
 }
 
